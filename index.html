@@ -1,0 +1,899 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fit Funnel</title>
+<meta name="description" content="Score inbound Pipedrive leads against the Good-Fit Rubric and track channel performance by fit tier.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #182233;
+    --ink-soft: #3c4658;
+    --paper: #f6f4ee;
+    --surface: #ffffff;
+    --line: #ddd7c8;
+    --accent: #1f6f52;
+    --accent-soft: #e4efe9;
+    --amber: #a8710f;
+    --amber-soft: #f6ecd9;
+    --rose: #9c3b3b;
+    --rose-soft: #f5e5e1;
+    --muted: #757064;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ink: #ece7db;
+      --ink-soft: #c6c0b1;
+      --paper: #171a1f;
+      --surface: #1f232a;
+      --line: #343a44;
+      --accent: #5bbb92;
+      --accent-soft: #223530;
+      --amber: #dcab5e;
+      --amber-soft: #362c1a;
+      --rose: #e08b8b;
+      --rose-soft: #3a2323;
+      --muted: #9c9689;
+      color-scheme: dark;
+    }
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--paper); }
+  body {
+    color: var(--ink);
+    font-family: "Public Sans", system-ui, -apple-system, sans-serif;
+    padding: 0 16px;
+  }
+  .mono { font-family: "IBM Plex Mono", ui-monospace, monospace; }
+  .wrap { max-width: 1180px; margin: 0 auto; padding-block: 24px 64px; }
+
+  header.top {
+    position: sticky;
+    top: 0;
+    background: var(--paper);
+    z-index: 20;
+    padding-block: 12px 10px;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 16px;
+  }
+  .top-row { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+  .brand { display: flex; align-items: baseline; gap: 10px; }
+  .brand .mark {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 28px; height: 28px; border-radius: 7px;
+    background: var(--accent); color: var(--surface);
+    font-size: 13px; font-weight: 700; flex: none;
+  }
+  h1 { font-size: 20px; font-weight: 700; margin: 0; letter-spacing: -0.01em; }
+  .subtitle { color: var(--muted); font-size: 13px; margin-top: 2px; }
+  .sync-note { font-size: 12px; color: var(--muted); text-align: right; }
+
+  nav.tabs { display: flex; gap: 4px; margin-top: 14px; }
+  nav.tabs button {
+    font: inherit; font-size: 13.5px; font-weight: 600; color: var(--muted);
+    background: none; border: none; padding: 8px 4px; cursor: pointer;
+    border-bottom: 2px solid transparent; margin-right: 14px;
+  }
+  nav.tabs button.active { color: var(--ink); border-bottom-color: var(--accent); }
+
+  .local-banner {
+    display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap;
+    background: var(--accent-soft); border: 1px solid var(--line); border-radius: 8px;
+    padding: 9px 14px; font-size: 12.5px; color: var(--ink-soft); margin-bottom: 18px;
+  }
+  .local-banner .actions { display: flex; gap: 8px; flex-wrap: wrap; }
+  .local-banner button {
+    font: inherit; font-size: 12px; font-weight: 700; padding: 5px 10px; border-radius: 6px;
+    background: var(--surface); color: var(--ink); border: 1px solid var(--line); cursor: pointer;
+  }
+
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; }
+
+  .stat-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin-bottom: 22px; }
+  .stat-tile { padding: 14px 16px; }
+  .stat-tile .label { font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.04em; color: var(--muted); }
+  .stat-tile .value { font-size: 26px; font-weight: 700; margin-top: 4px; font-variant-numeric: tabular-nums; }
+  .tier-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 6px; }
+  .tier-dot.good { background: var(--accent); }
+  .tier-dot.medium { background: var(--amber); }
+  .tier-dot.low { background: var(--rose); }
+
+  .pill {
+    display: inline-flex; align-items: center; gap: 5px;
+    font-size: 11.5px; font-weight: 600; padding: 3px 9px; border-radius: 999px;
+    white-space: nowrap;
+  }
+  .pill.good { background: var(--accent-soft); color: var(--accent); }
+  .pill.medium { background: var(--amber-soft); color: var(--amber); }
+  .pill.low { background: var(--rose-soft); color: var(--rose); }
+  .pill.neutral { background: var(--paper); color: var(--muted); border: 1px solid var(--line); }
+  .pill.open { background: var(--accent-soft); color: var(--accent); }
+  .pill.won { background: var(--accent-soft); color: var(--accent); }
+  .pill.lost { background: var(--rose-soft); color: var(--rose); }
+
+  section.panel { margin-bottom: 26px; }
+  .panel h2 { font-size: 15px; font-weight: 700; margin: 0 0 10px; }
+  .panel .panel-sub { font-size: 12.5px; color: var(--muted); margin: -6px 0 12px; }
+
+  .toolbar { display: flex; gap: 8px; align-items: center; margin-bottom: 10px; flex-wrap: wrap; }
+  .toolbar input[type=search] {
+    font: inherit; font-size: 13px; padding: 7px 10px; border-radius: 7px;
+    border: 1px solid var(--line); background: var(--surface); color: var(--ink);
+    flex: 1; min-width: 160px;
+  }
+  .seg { display: flex; border: 1px solid var(--line); border-radius: 7px; overflow: hidden; }
+  .seg button {
+    font: inherit; font-size: 12.5px; font-weight: 600; padding: 6px 12px;
+    background: var(--surface); color: var(--muted); border: none; cursor: pointer;
+    border-right: 1px solid var(--line);
+  }
+  .seg button:last-child { border-right: none; }
+  .seg button.active { background: var(--ink); color: var(--paper); }
+
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  thead th {
+    text-align: left; font-size: 11px; text-transform: uppercase; letter-spacing: 0.03em;
+    color: var(--muted); font-weight: 600; padding: 8px 10px; border-bottom: 1px solid var(--line);
+  }
+  tbody td { padding: 10px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  tbody tr:last-child td { border-bottom: none; }
+  .org-cell .org-name { font-weight: 600; }
+  .org-cell .org-sub { color: var(--muted); font-size: 11.5px; margin-top: 1px; }
+  .num { font-variant-numeric: tabular-nums; }
+  .flag-badge { color: var(--rose); font-weight: 600; font-size: 11.5px; }
+
+  .table-wrap { overflow-x: auto; }
+
+  button.score-btn {
+    font: inherit; font-size: 12px; font-weight: 700; padding: 6px 12px; border-radius: 6px;
+    background: var(--ink); color: var(--paper); border: none; cursor: pointer;
+  }
+  button.score-btn.secondary { background: var(--surface); color: var(--ink); border: 1px solid var(--line); }
+
+  .drawer-row td { background: var(--paper); padding: 16px; }
+  .score-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px; margin-bottom: 12px; }
+  .score-field label {
+    display: block; font-size: 11.5px; font-weight: 600; color: var(--muted); margin-bottom: 4px;
+    text-transform: uppercase; letter-spacing: 0.02em;
+  }
+  .score-field select, .score-field input[type=text], .drawer textarea {
+    font: inherit; font-size: 13px; padding: 7px 8px; border-radius: 6px; width: 100%;
+    border: 1px solid var(--line); background: var(--surface); color: var(--ink);
+  }
+  .drawer textarea { min-height: 56px; resize: vertical; }
+  .drawer .row-flex { display: flex; gap: 12px; align-items: flex-start; flex-wrap: wrap; }
+  .drawer .row-flex > div { flex: 1; min-width: 220px; }
+  .live-tier { display: flex; align-items: center; gap: 8px; margin: 10px 0; font-size: 13px; }
+  .anomaly-line { display: flex; align-items: center; gap: 8px; margin: 10px 0; font-size: 13px; }
+  .anomaly-line input { width: 15px; height: 15px; }
+  .drawer-actions { display: flex; gap: 8px; margin-top: 10px; }
+  .save-note { font-size: 12px; color: var(--muted); align-self: center; }
+
+  .split { display: grid; grid-template-columns: 1.1fr 1fr; gap: 16px; }
+  @media (max-width: 760px) { .split { grid-template-columns: 1fr; } }
+  .breakdown-table th, .breakdown-table td { padding: 7px 10px; }
+  .bar-track { background: var(--paper); border: 1px solid var(--line); border-radius: 5px; height: 8px; overflow: hidden; display: flex; min-width: 90px; }
+  .bar-seg.good { background: var(--accent); }
+  .bar-seg.medium { background: var(--amber); }
+  .bar-seg.low { background: var(--rose); }
+
+  .summary-box { padding: 16px; }
+  .summary-box pre {
+    white-space: pre-wrap; font-family: "IBM Plex Mono", monospace; font-size: 12.5px; line-height: 1.6;
+    background: var(--paper); border: 1px solid var(--line); border-radius: 7px; padding: 12px; margin: 10px 0 0;
+  }
+  .copy-btn {
+    font: inherit; font-size: 12px; font-weight: 700; padding: 6px 12px; border-radius: 6px;
+    background: var(--accent); color: var(--surface); border: none; cursor: pointer;
+  }
+  .anomaly-list li { margin-bottom: 8px; font-size: 13px; }
+  .anomaly-list .a-org { font-weight: 600; }
+  .empty-note { color: var(--muted); font-size: 13px; padding: 18px 4px; }
+
+  [hidden] { display: none !important; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div class="top-row">
+      <div class="brand">
+        <span class="mark">FF</span>
+        <div>
+          <h1>Fit Funnel</h1>
+          <div class="subtitle">Good-Fit Rubric &amp; channel attribution &middot; Token of Trust Growth</div>
+        </div>
+      </div>
+      <div class="sync-note" id="syncNote">Loading&hellip;</div>
+    </div>
+    <nav class="tabs">
+      <button class="active" data-tab="score">Score leads</button>
+      <button data-tab="dashboard">Dashboard</button>
+    </nav>
+  </header>
+
+  <div class="local-banner">
+    <span>Lead data syncs automatically from Pipedrive &mdash; scores save to <strong>this browser only</strong>. Export a snapshot to share it or combine it with someone else's.</span>
+    <div class="actions">
+      <button id="exportBtn">Export JSON</button>
+      <button id="importBtn">Import JSON</button>
+      <button id="resetBtn">Clear all scoring</button>
+      <input type="file" id="importFile" accept="application/json" hidden>
+    </div>
+  </div>
+
+  <div id="tab-score">
+    <section class="panel">
+      <div class="stat-row" id="statRow"></div>
+
+      <div class="toolbar">
+        <input type="search" id="searchBox" placeholder="Search organization or title&hellip;">
+        <div class="seg" id="filterSeg">
+          <button class="active" data-filter="unscored">Needs scoring</button>
+          <button data-filter="scored">Scored</button>
+          <button data-filter="all">All</button>
+        </div>
+      </div>
+
+      <div class="toolbar" style="margin-top:-2px;">
+        <div class="score-field" style="max-width:220px;">
+          <label for="scorerName">Your name (for attribution)</label>
+          <input type="text" id="scorerName" placeholder="e.g. Jo">
+        </div>
+      </div>
+
+      <div class="card table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Organization</th>
+              <th>Channel</th>
+              <th>Pathway</th>
+              <th>Value</th>
+              <th>Status</th>
+              <th>Fit</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="leadsBody"></tbody>
+        </table>
+        <div class="empty-note" id="emptyNote" hidden></div>
+      </div>
+    </section>
+  </div>
+
+  <div id="tab-dashboard" hidden>
+    <section class="panel">
+      <div class="stat-row" id="dashStatRow"></div>
+      <div class="split">
+        <div class="card" style="padding:16px;">
+          <h2>Fit by channel</h2>
+          <div class="panel-sub">Source channel / origin, scored leads only</div>
+          <div class="table-wrap">
+            <table class="breakdown-table" id="channelTable"></table>
+          </div>
+        </div>
+        <div class="card" style="padding:16px;">
+          <h2>Fit by segment (Pathway)</h2>
+          <div class="panel-sub">Compliance pathway classification, scored leads only</div>
+          <div class="table-wrap">
+            <table class="breakdown-table" id="pathwayTable"></table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="split">
+        <div class="card" style="padding:16px;">
+          <h2>Anomalies to review</h2>
+          <div class="panel-sub">Good-Fit leads lost quickly, Low-Fit leads that won, channels &gt;50% low-fit, and anything reps flagged manually</div>
+          <ul class="anomaly-list" id="anomalyList"></ul>
+        </div>
+        <div class="card summary-box">
+          <h2>Weekly summary</h2>
+          <div class="panel-sub">Paste into the Growth channel &mdash; matches the backup process format</div>
+          <button class="copy-btn" id="copySummary">Copy summary</button>
+          <pre id="summaryText"></pre>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  // Seeded from a live Pipedrive pull on 2026-09-23 (last 30 days of deals).
+  // Re-generate this array by asking Claude to refresh the export with fresh
+  // Pipedrive data whenever you want an updated starting point.
+  var SEED_LEADS = [
+    ["1463","[webform] SFV","SFV","Cherokee","open",0,"USD","Web forms","Web Forms",null,null,"2026-09-23 17:58:57",null],
+    ["1462","straightfirevaporium.com+u1PPnKa","straightfirevaporium.com","TOT Success","open",0,"USD",null,"API",null,"Production","2026-09-23 17:55:52",null],
+    ["1461","s60vapes.co.uk+aRFu3yd","s60vapes.co.uk","TOT Success","open",0,"USD",null,"API",null,"Production","2026-09-22 15:12:45",null],
+    ["1460","www.club-auto.com+l5hb692","www.club-auto.com","TOT Success","open",0,"USD",null,"API",null,"Production","2026-09-22 14:14:22",null],
+    ["1459","pornhub.run+3zxN991","pornhub.run","TOT Success","open",0,"USD",null,"API",null,"Production","2026-09-22 10:47:19",null],
+    ["1458","dariogentleman.com+6P5TZpj","dariogentleman.com","TOT Success","open",0,"USD",null,"API",null,"Production","2026-09-22 06:01:32",null],
+    ["1457","Branding House LLC","Branding House LLC","TOT Success","open",0,"USD",null,"API","PACT + Excise for Tobacco / Vape / Nicotine",null,"2026-09-21 20:36:53",null],
+    ["1456","www.flowglobals.com+1fSZBRj","www.flowglobals.com","TOT Success","lost",0,"USD",null,"API",null,"Production","2026-09-21 18:02:34","2026-09-21 18:05:10"],
+    ["1455","whitecloudelectroniccigarettes.com+nUYee3p","whitecloudelectroniccigarettes.com","TOT Success","open",0,"USD",null,"API",null,"Production","2026-09-21 17:11:38",null],
+    ["1454","success.internal.tokenoftrust.com+YlXM5nw","success.internal.tokenoftrust.com","TOT Success","open",0,"USD",null,"API",null,"Production","2026-09-21 13:19:56",null],
+    ["1453","[webform] Dream Castle Media Agency LLC","Dream Castle Media Agency LLC","Cherokee","open",0,"USD","Web forms","Web Forms","PACT + Excise for Tobacco / Vape / Nicotine",null,"2026-09-21 04:08:16",null],
+    ["1452","thehouseofharriet.com+rl23b36","thehouseofharriet.com","TOT Success","open",0,"USD",null,"API",null,"Production","2026-09-20",null],
+    ["1451","reservelp.com+uC1TIVH","reservelp.com","TOT Success","open",0,"USD",null,"API",null,"Production","2026-09-19 21:49:40",null],
+    ["1450","ejuicedemand.com+Jz4eyKF","ejuicedemand.com","TOT Success","open",0,"USD",null,"API",null,"Production","2026-09-19 18:22:10",null],
+    ["1449","[webform] Noot","Noot","Cherokee","open",0,"USD","Web forms","Web Forms","PACT + Excise for Tobacco / Vape / Nicotine",null,"2026-09-18 16:02:16",null],
+    ["1448","[webform] alex organization","alex organization","Cherokee","open",0,"USD","Web forms","Web Forms","PACT + Excise for Tobacco / Vape / Nicotine",null,"2026-09-17 23:49:14",null],
+    ["1447","driphacks.ch+NFSDJ4m","driphacks.ch","TOT Success","open",0,"USD",null,"API",null,"Production","2026-09-16 10:26:22",null],
+    ["1446","vaibazar.com+CnvM3Be","vaibazar.com","TOT Success","open",0,"USD",null,"API","Other","Production","2026-09-14 20:12:03",null],
+    ["1443","getonnex.com+8fsQ7vN","getonnex.com","TOT Success","open",0,"USD",null,"API","Age Verification for Tobacco / Vape / Nicotine","Production","2026-09-11 19:17:23",null],
+    ["1442","silkcompanions.com+jbVQCDS","silkcompanions.com","TOT Success","open",0,"USD",null,"API","Other","Production","2026-09-11 06:00:44",null],
+    ["1441","darkblue-aardvark-958106.hostingersite.com+YbqH9VG","darkblue-aardvark-958106.hostingersite.com","TOT Success","open",0,"USD",null,"API",null,"Production","2026-09-11 05:27:34",null],
+    ["1440","michaelvanginkel.nl+NIpA1R6","michaelvanginkel.nl","TOT Success","open",0,"USD",null,"API",null,"Production","2026-09-10 15:54:57",null],
+    ["1439","puplvr07.github.io+w2z0Oww","puplvr07.github.io","TOT Success","open",0,"USD",null,"API","Not enough info","Production","2026-09-09 10:24:02",null],
+    ["1438","Paramountimportssanjose","Paramount Imports","Cherokee","open",0,"USD","Campaigns","Manually created","Age Verification for Tobacco / Vape / Nicotine",null,"2026-09-08",null],
+    ["1435","wyndhamreservecigars.com+FJodTO2","wyndhamreservecigars.com","TOT Success","open",0,"USD",null,"API","Age Verification for Tobacco / Vape / Nicotine","Production","2026-09-07 20:14:08",null],
+    ["1434","1264595.us8.myftpupload.com+916O8Z7","1264595.us8.myftpupload.com","TOT Success","open",0,"USD",null,"API",null,"Production","2026-09-06 10:08:46",null],
+    ["1433","ebay.com+7HLDR3l","ebay.com","TOT Success","open",0,"USD",null,"API","Other","Production","2026-09-05 13:15:48",null],
+    ["1432","cbemartco.com+ukXxjqG","cbemartco.com","TOT Success","open",0,"USD",null,"API","Other","Production","2026-09-05 12:41:40",null],
+    ["1430","[Referral] Chuc.com","Charlie's Holdings","Austin O'Brion","open",7500,"USD",null,"Manually created","Age Verification for Tobacco / Vape / Nicotine",null,"2026-09-04 19:50:39",null],
+    ["1429","testercompany.com+9MSdyti","testercompany.com","TOT Success","open",0,"USD",null,"API",null,"Production","2026-09-03 17:07:45",null],
+    ["1428","peptinovachile.com+pY3nf9x","peptinovachile.com","TOT Success","open",0,"USD",null,"API",null,"Production","2026-09-02 17:35:34",null],
+    ["1427","vapenicotinefree.com+DAHuQ32","vapenicotinefree.com","TOT Success","open",0,"USD",null,"API","Age Verification for Tobacco / Vape / Nicotine","Production","2026-09-01 20:48:35",null],
+    ["1425","joltid.com+SRml2kC","joltid.com","TOT Success","lost",0,"USD",null,"API","Not enough info","Production","2026-09-01 11:15:06","2026-09-21 03:34:36"],
+    ["1424","zambridge.net+uA7WJfh","zambridge.net","TOT Success","open",0,"USD",null,"API","Other","Production","2026-08-30 10:50:52",null],
+    ["1423","fasdevinho.com.br+K0vPfle","fasdevinho.com.br","TOT Success","lost",0,"USD",null,"API","Other","Production","2026-08-27 03:39:29","2026-09-21 04:03:21"],
+    ["1422","test-dmm.it+KRf4N7B","test-dmm.it","TOT Success","lost",0,"USD",null,"API","Not enough info","Production","2026-08-25 16:22:35","2026-09-21 04:02:33"]
+  ].map(function (r) {
+    return {
+      id: r[0], title: r[1], org: r[2], owner: r[3], status: r[4], value: r[5], currency: r[6],
+      sourceChannel: r[7], sourceOrigin: r[8], pathway: r[9], sourceEnv: r[10], createdAt: r[11], closedAt: r[12],
+      scored: false, scores: {}, fitTier: null, notes: "", anomaly: false, anomalyNote: "", scoredBy: null, scoredAt: null
+    };
+  });
+  var SEED_SYNCED_AT = "2026-09-23T18:10:00.000Z";
+
+  var STORAGE_KEY = "fitfunnel_leads_v1";
+  var CRITERIA = [
+    { key: "segmentAlignment", label: "Segment alignment" },
+    { key: "platformCompatibility", label: "Platform compatibility" },
+    { key: "revenueThreshold", label: "Revenue threshold" },
+    { key: "complianceComplexity", label: "Compliance complexity fit" },
+    { key: "useCaseClarity", label: "Use case clarity" }
+  ];
+
+  var state = { leads: [], filter: "unscored", search: "", openDrawerId: null };
+
+  function tierFromSum(sum) {
+    if (sum >= 13) return "Good-Fit";
+    if (sum >= 9) return "Medium-Fit";
+    return "Low-Fit";
+  }
+  function tierClass(tier) {
+    if (tier === "Good-Fit") return "good";
+    if (tier === "Medium-Fit") return "medium";
+    if (tier === "Low-Fit") return "low";
+    return "neutral";
+  }
+  function fmtMoney(v) {
+    if (!v) return "$0";
+    return "$" + Number(v).toLocaleString("en-US", { maximumFractionDigits: 0 });
+  }
+  function esc(s) {
+    return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+    });
+  }
+
+  // ---------- persistence ----------
+  function loadLeads() {
+    try {
+      var raw = localStorage.getItem(STORAGE_KEY);
+      if (raw) return JSON.parse(raw);
+    } catch (e) {}
+    return SEED_LEADS.map(function (l) { return Object.assign({}, l, { scores: {} }); });
+  }
+  function saveLeads() {
+    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state.leads)); } catch (e) {}
+  }
+
+  function mergeLead(local, incoming) {
+    if (!local) return incoming;
+    if (incoming.scored && !local.scored) return incoming;
+    if (incoming.scored && local.scored) {
+      return (incoming.scoredAt || "") > (local.scoredAt || "") ? incoming : local;
+    }
+    return local;
+  }
+  function mergeImport(importedLeads) {
+    var byId = {};
+    state.leads.forEach(function (l) { byId[l.id] = l; });
+    importedLeads.forEach(function (inc) {
+      byId[inc.id] = mergeLead(byId[inc.id], inc);
+    });
+    state.leads = Object.keys(byId).map(function (k) { return byId[k]; });
+    saveLeads();
+  }
+
+  // Merge a freshly-synced base lead list (from data/leads.json, written by the
+  // GitHub Action) into the current state: refresh each lead's Pipedrive fields
+  // (org, status, value, etc.) but always keep this browser's own scoring —
+  // never let a re-sync silently wipe out someone's work. A lead that already
+  // has local scoring is kept even if it falls outside the sync's lookback
+  // window (e.g. it's more than 30 days old now).
+  var SCORE_FIELDS = ["scored", "scores", "fitTier", "notes", "anomaly", "anomalyNote", "scoredBy", "scoredAt"];
+  function mergeSyncedBase(freshLeads) {
+    var byId = {};
+    state.leads.forEach(function (l) { byId[l.id] = l; });
+
+    freshLeads.forEach(function (fresh) {
+      var existing = byId[fresh.id];
+      if (existing) {
+        var merged = Object.assign({}, fresh);
+        SCORE_FIELDS.forEach(function (k) { merged[k] = existing[k]; });
+        byId[fresh.id] = merged;
+      } else {
+        byId[fresh.id] = fresh;
+      }
+    });
+
+    state.leads = Object.keys(byId).map(function (k) { return byId[k]; });
+    saveLeads();
+  }
+
+  // ---------- render: stat tiles ----------
+  function renderStats() {
+    var leads = state.leads;
+    var scored = leads.filter(function (l) { return l.scored; });
+    var unscored = leads.length - scored.length;
+    var good = scored.filter(function (l) { return l.fitTier === "Good-Fit"; }).length;
+    var med = scored.filter(function (l) { return l.fitTier === "Medium-Fit"; }).length;
+    var low = scored.filter(function (l) { return l.fitTier === "Low-Fit"; }).length;
+    var pct = function (n) { return scored.length ? Math.round((n / scored.length) * 100) : 0; };
+
+    document.getElementById("statRow").innerHTML =
+      tile("Total leads", leads.length) +
+      tile("Needs scoring", unscored) +
+      tile("Good-Fit", pct(good) + "%", "good") +
+      tile("Medium-Fit", pct(med) + "%", "medium") +
+      tile("Low-Fit", pct(low) + "%", "low");
+  }
+  function tile(label, value, dot) {
+    return '<div class="card stat-tile"><div class="label">' + esc(label) + '</div>' +
+      '<div class="value">' + (dot ? '<span class="tier-dot ' + dot + '"></span>' : '') + esc(value) + '</div></div>';
+  }
+
+  // ---------- render: leads table ----------
+  function matchesFilter(l) {
+    if (state.filter === "unscored") return !l.scored;
+    if (state.filter === "scored") return !!l.scored;
+    return true;
+  }
+  function matchesSearch(l) {
+    if (!state.search) return true;
+    var q = state.search.toLowerCase();
+    return (l.org || "").toLowerCase().indexOf(q) > -1 || (l.title || "").toLowerCase().indexOf(q) > -1;
+  }
+
+  function renderTable() {
+    var body = document.getElementById("leadsBody");
+    var empty = document.getElementById("emptyNote");
+    var rows = state.leads.filter(matchesFilter).filter(matchesSearch);
+    rows.sort(function (a, b) { return (b.createdAt || "").localeCompare(a.createdAt || ""); });
+
+    if (!rows.length) {
+      body.innerHTML = "";
+      empty.hidden = false;
+      empty.textContent = state.leads.length ? "No leads match this filter." : "No leads loaded.";
+      return;
+    }
+    empty.hidden = true;
+
+    body.innerHTML = rows.map(function (l) {
+      return (
+        '<tr data-id="' + esc(l.id) + '">' + rowInnerHtml(l) + '</tr>' +
+        '<tr class="drawer-row" data-drawer="' + esc(l.id) + '" hidden><td colspan="7"></td></tr>'
+      );
+    }).join("");
+
+    Array.prototype.forEach.call(body.querySelectorAll("tr[data-id]"), bindRowButton);
+
+    if (state.openDrawerId && rows.some(function (l) { return l.id === state.openDrawerId; })) {
+      showDrawer(state.openDrawerId);
+    }
+  }
+
+  function rowInnerHtml(l) {
+    var tier = l.fitTier;
+    var tierPill = tier ? '<span class="pill ' + tierClass(tier) + '">' + esc(tier) + "</span>" : '<span class="pill neutral">Unscored</span>';
+    var statusClass = (l.status || "").toLowerCase();
+    var flag = "";
+    if (tier === "Good-Fit" && statusClass === "lost") flag = '<div class="flag-badge">&#9888; Good-Fit, lost</div>';
+    if (tier === "Low-Fit" && statusClass === "won") flag = '<div class="flag-badge">&#9888; Low-Fit, won</div>';
+    if (l.anomaly) flag += '<div class="flag-badge">&#9873; Flagged: ' + esc(l.anomalyNote || "see note") + '</div>';
+
+    return (
+      '<td class="org-cell"><div class="org-name">' + esc(l.org || "(no org)") + '</div>' +
+      '<div class="org-sub">' + esc(l.title || "") + '</div>' + flag + '</td>' +
+      '<td>' + esc(l.sourceChannel || l.sourceOrigin || "—") + '</td>' +
+      '<td>' + esc(l.pathway || "—") + '</td>' +
+      '<td class="num">' + fmtMoney(l.value) + '</td>' +
+      '<td><span class="pill ' + statusClass + '">' + esc(l.status || "—") + '</span></td>' +
+      '<td>' + tierPill + '</td>' +
+      '<td><button class="score-btn secondary toggle-drawer">' + (l.scored ? "Edit" : "Score") + '</button></td>'
+    );
+  }
+
+  function bindRowButton(tr) {
+    if (!tr) return;
+    var btn = tr.querySelector(".toggle-drawer");
+    if (!btn) return;
+    btn.addEventListener("click", function () {
+      var body = document.getElementById("leadsBody");
+      var id = tr.getAttribute("data-id");
+      if (state.openDrawerId === id) {
+        state.openDrawerId = null;
+        var row = body.querySelector('.drawer-row[data-drawer="' + id + '"]');
+        if (row) row.hidden = true;
+      } else {
+        state.openDrawerId = id;
+        showDrawer(id);
+      }
+    });
+  }
+
+  // Refresh one row in place (fit pill, button label, flags) without tearing
+  // down the rest of the table, so an open drawer and its "Saved" note survive.
+  function patchRow(id) {
+    var tr = document.querySelector('#leadsBody tr[data-id="' + id + '"]');
+    var lead = state.leads.find(function (l) { return l.id === id; });
+    if (!tr || !lead) return;
+    tr.innerHTML = rowInnerHtml(lead);
+    bindRowButton(tr);
+  }
+
+  function showDrawer(id) {
+    var body = document.getElementById("leadsBody");
+    var drawerRow = body.querySelector('.drawer-row[data-drawer="' + id + '"]');
+    if (!drawerRow) return;
+    Array.prototype.forEach.call(body.querySelectorAll(".drawer-row"), function (r) { if (r !== drawerRow) r.hidden = true; });
+
+    var lead = state.leads.find(function (l) { return l.id === id; });
+    if (!lead) return;
+    var td = drawerRow.querySelector("td");
+    var s = lead.scores || {};
+
+    td.innerHTML =
+      '<div class="drawer">' +
+      '<div class="score-grid">' +
+      CRITERIA.map(function (c) {
+        var cur = s[c.key] || "";
+        return '<div class="score-field"><label>' + esc(c.label) + '</label>' +
+          '<select data-crit="' + c.key + '">' +
+          '<option value="">&mdash;</option>' +
+          '<option value="3"' + (cur === 3 ? " selected" : "") + '>Good</option>' +
+          '<option value="2"' + (cur === 2 ? " selected" : "") + '>Medium</option>' +
+          '<option value="1"' + (cur === 1 ? " selected" : "") + '>Low</option>' +
+          '</select></div>';
+      }).join("") +
+      '</div>' +
+      '<div class="live-tier"><strong>Computed tier:</strong> <span id="liveTier-' + esc(id) + '">&mdash;</span></div>' +
+      '<div class="row-flex">' +
+      '<div><label style="font-size:11.5px;font-weight:600;color:var(--muted);text-transform:uppercase;">Reasoning notes</label>' +
+      '<textarea id="notes-' + esc(id) + '" placeholder="Short reasoning, e.g. why this segment/revenue tier">' + esc(lead.notes || "") + '</textarea></div>' +
+      '</div>' +
+      '<div class="anomaly-line"><input type="checkbox" id="anomaly-' + esc(id) + '"' + (lead.anomaly ? " checked" : "") + '>' +
+      '<label for="anomaly-' + esc(id) + '">Flag as an anomaly (e.g. Good-Fit lost quickly, Low-Fit moved to proposal)</label></div>' +
+      '<input type="text" id="anomalyNote-' + esc(id) + '" placeholder="Anomaly note (optional)" value="' + esc(lead.anomalyNote || "") + '" style="max-width:420px;">' +
+      '<div class="drawer-actions"><button class="score-btn" id="save-' + esc(id) + '">Save score</button>' +
+      '<span class="save-note" id="saveNote-' + esc(id) + '"></span></div>' +
+      '</div>';
+
+    drawerRow.hidden = false;
+
+    function computeLiveTier() {
+      var selects = td.querySelectorAll("select[data-crit]");
+      var sum = 0, filled = 0;
+      Array.prototype.forEach.call(selects, function (sel) {
+        var v = parseInt(sel.value, 10);
+        if (v) { sum += v; filled++; }
+      });
+      var out = document.getElementById("liveTier-" + id);
+      if (filled < CRITERIA.length) { out.textContent = filled + " of " + CRITERIA.length + " criteria set"; return null; }
+      var tier = tierFromSum(sum);
+      out.innerHTML = '<span class="pill ' + tierClass(tier) + '">' + tier + '</span> (score ' + sum + '/15)';
+      return { sum: sum, tier: tier };
+    }
+    Array.prototype.forEach.call(td.querySelectorAll("select[data-crit]"), function (sel) {
+      sel.addEventListener("change", computeLiveTier);
+    });
+    computeLiveTier();
+
+    document.getElementById("save-" + id).addEventListener("click", function () {
+      var result = computeLiveTier();
+      var noteEl = document.getElementById("saveNote-" + id);
+      if (!result) { noteEl.textContent = "Set all five criteria first."; return; }
+      var scores = {};
+      Array.prototype.forEach.call(td.querySelectorAll("select[data-crit]"), function (sel) {
+        scores[sel.getAttribute("data-crit")] = parseInt(sel.value, 10);
+      });
+      var scorerName = (document.getElementById("scorerName").value || "").trim();
+      Object.assign(lead, {
+        scored: true,
+        scores: scores,
+        fitTier: result.tier,
+        notes: (document.getElementById("notes-" + id).value || "").trim(),
+        anomaly: document.getElementById("anomaly-" + id).checked,
+        anomalyNote: (document.getElementById("anomalyNote-" + id).value || "").trim(),
+        scoredBy: scorerName || "Unattributed",
+        scoredAt: new Date().toISOString()
+      });
+      saveLeads();
+      noteEl.textContent = "Saved to this browser.";
+      renderStats();
+      if (!document.getElementById("tab-dashboard").hidden) renderDashboard();
+
+      if (matchesFilter(lead) && matchesSearch(lead)) {
+        // Still belongs in this view: patch the row in place so the open
+        // drawer and the "Saved" note stay on screen instead of being wiped
+        // by a full table rebuild.
+        patchRow(id);
+      } else {
+        // No longer matches the current filter (e.g. "Needs scoring") - let the
+        // save note show briefly, then remove it from view.
+        setTimeout(function () {
+          state.openDrawerId = null;
+          renderTable();
+        }, 900);
+      }
+    });
+  }
+
+  // ---------- dashboard ----------
+  function groupBy(list, keyFn) {
+    var map = {};
+    list.forEach(function (l) {
+      var k = keyFn(l) || "Unclassified";
+      (map[k] = map[k] || []).push(l);
+    });
+    return map;
+  }
+  function tierCounts(list) {
+    var g = 0, m = 0, lo = 0;
+    list.forEach(function (l) {
+      if (l.fitTier === "Good-Fit") g++;
+      else if (l.fitTier === "Medium-Fit") m++;
+      else if (l.fitTier === "Low-Fit") lo++;
+    });
+    return { good: g, medium: m, low: lo, total: g + m + lo };
+  }
+
+  function renderBreakdownTable(el, groups) {
+    var rows = Object.keys(groups).map(function (k) {
+      return { name: k, c: tierCounts(groups[k]) };
+    }).filter(function (r) { return r.c.total > 0; })
+      .sort(function (a, b) { return b.c.total - a.c.total; });
+
+    if (!rows.length) {
+      el.innerHTML = '<tbody><tr><td class="empty-note">No scored leads yet.</td></tr></tbody>';
+      return;
+    }
+
+    el.innerHTML =
+      "<thead><tr><th>Source</th><th>Scored</th><th>Mix</th><th>% Good</th></tr></thead><tbody>" +
+      rows.map(function (r) {
+        var pctGood = r.c.total ? Math.round((r.c.good / r.c.total) * 100) : 0;
+        var wGood = r.c.total ? (r.c.good / r.c.total) * 100 : 0;
+        var wMed = r.c.total ? (r.c.medium / r.c.total) * 100 : 0;
+        var wLow = r.c.total ? (r.c.low / r.c.total) * 100 : 0;
+        var warn = wLow > 50 ? ' <span class="flag-badge">&#9888; &gt;50% low-fit</span>' : "";
+        return "<tr><td>" + esc(r.name) + warn + "</td><td class='num'>" + r.c.total + "</td>" +
+          '<td><div class="bar-track"><div class="bar-seg good" style="width:' + wGood + '%"></div>' +
+          '<div class="bar-seg medium" style="width:' + wMed + '%"></div>' +
+          '<div class="bar-seg low" style="width:' + wLow + '%"></div></div></td>' +
+          "<td class='num'>" + pctGood + "%</td></tr>";
+      }).join("") + "</tbody>";
+  }
+
+  function renderDashboard() {
+    var leads = state.leads;
+    var scored = leads.filter(function (l) { return l.scored; });
+    var closed = scored.filter(function (l) { return (l.status || "").toLowerCase() === "won" || (l.status || "").toLowerCase() === "lost"; });
+    var c = tierCounts(scored);
+    var pct = function (n) { return c.total ? Math.round((n / c.total) * 100) : 0; };
+
+    function winRate(tier) {
+      var tierClosed = closed.filter(function (l) { return l.fitTier === tier; });
+      if (!tierClosed.length) return null;
+      var tierWon = tierClosed.filter(function (l) { return (l.status || "").toLowerCase() === "won"; });
+      return Math.round((tierWon.length / tierClosed.length) * 100);
+    }
+    var wrGood = winRate("Good-Fit"), wrLow = winRate("Low-Fit");
+    var wrText = function (v) { return v === null ? "n/a" : v + "%"; };
+
+    document.getElementById("dashStatRow").innerHTML =
+      tile("Scored leads", scored.length) +
+      tile("Good-Fit", pct(c.good) + "%", "good") +
+      tile("Medium-Fit", pct(c.medium) + "%", "medium") +
+      tile("Low-Fit", pct(c.low) + "%", "low") +
+      tile("Win rate, Good-Fit", wrText(wrGood)) +
+      tile("Win rate, Low-Fit", wrText(wrLow));
+
+    renderBreakdownTable(document.getElementById("channelTable"), groupBy(scored, function (l) { return l.sourceChannel || l.sourceOrigin; }));
+    renderBreakdownTable(document.getElementById("pathwayTable"), groupBy(scored, function (l) { return l.pathway; }));
+
+    var anomalies = [];
+    scored.forEach(function (l) {
+      var st = (l.status || "").toLowerCase();
+      if (l.fitTier === "Good-Fit" && st === "lost") anomalies.push({ org: l.org, note: "Scored Good-Fit but deal was lost." });
+      if (l.fitTier === "Low-Fit" && st === "won") anomalies.push({ org: l.org, note: "Scored Low-Fit but deal was won." });
+      if (l.anomaly) anomalies.push({ org: l.org, note: l.anomalyNote || "Flagged by " + (l.scoredBy || "a reviewer") + "." });
+    });
+    var chanGroups = groupBy(scored, function (l) { return l.sourceChannel || l.sourceOrigin; });
+    Object.keys(chanGroups).forEach(function (k) {
+      var cc = tierCounts(chanGroups[k]);
+      if (cc.total >= 3 && cc.low / cc.total > 0.5) anomalies.push({ org: k, note: "Channel is over 50% Low-Fit (" + cc.low + " of " + cc.total + ")." });
+    });
+    var anomalyList = document.getElementById("anomalyList");
+    anomalyList.innerHTML = anomalies.length
+      ? anomalies.map(function (a) { return '<li><span class="a-org">' + esc(a.org || "Unknown") + ":</span> " + esc(a.note) + "</li>"; }).join("")
+      : '<li class="empty-note" style="padding:0;">Nothing to flag right now.</li>';
+
+    var today = new Date();
+    var summary =
+      "Fit Funnel weekly summary — " + today.toISOString().slice(0, 10) + "\n" +
+      "Scored this period: " + scored.length + " leads\n" +
+      "  Good-Fit:   " + pct(c.good) + "% (" + c.good + ")\n" +
+      "  Medium-Fit: " + pct(c.medium) + "% (" + c.medium + ")\n" +
+      "  Low-Fit:    " + pct(c.low) + "% (" + c.low + ")\n\n" +
+      "Channel breakdown (% Good-Fit):\n" +
+      Object.keys(chanGroups).map(function (k) {
+        var cc = tierCounts(chanGroups[k]);
+        return "  " + k + ": " + (cc.total ? Math.round((cc.good / cc.total) * 100) : 0) + "% good (" + cc.total + " scored)";
+      }).join("\n") + "\n\n" +
+      "Scoring inconsistencies:\n" +
+      (anomalies.length ? anomalies.map(function (a) { return "  - " + (a.org || "Unknown") + ": " + a.note; }).join("\n") : "  None flagged.");
+
+    document.getElementById("summaryText").textContent = summary;
+  }
+
+  document.getElementById("copySummary").addEventListener("click", function () {
+    var text = document.getElementById("summaryText").textContent;
+    var btn = document.getElementById("copySummary");
+    function done(ok) { btn.textContent = ok ? "Copied" : "Copy summary"; setTimeout(function () { btn.textContent = "Copy summary"; }, 1500); }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(function () { done(true); }).catch(function () { done(false); });
+    } else { done(false); }
+  });
+
+  // ---------- tabs ----------
+  Array.prototype.forEach.call(document.querySelectorAll("nav.tabs button"), function (btn) {
+    btn.addEventListener("click", function () {
+      Array.prototype.forEach.call(document.querySelectorAll("nav.tabs button"), function (b) { b.classList.remove("active"); });
+      btn.classList.add("active");
+      var tab = btn.getAttribute("data-tab");
+      document.getElementById("tab-score").hidden = tab !== "score";
+      document.getElementById("tab-dashboard").hidden = tab !== "dashboard";
+      if (tab === "dashboard") renderDashboard();
+    });
+  });
+
+  document.getElementById("searchBox").addEventListener("input", function (e) {
+    state.search = e.target.value;
+    renderTable();
+  });
+  Array.prototype.forEach.call(document.getElementById("filterSeg").querySelectorAll("button"), function (btn) {
+    btn.addEventListener("click", function () {
+      Array.prototype.forEach.call(document.getElementById("filterSeg").querySelectorAll("button"), function (b) { b.classList.remove("active"); });
+      btn.classList.add("active");
+      state.filter = btn.getAttribute("data-filter");
+      renderTable();
+    });
+  });
+
+  try {
+    var savedName = localStorage.getItem("fitfunnel_scorer_name");
+    if (savedName) document.getElementById("scorerName").value = savedName;
+  } catch (e) {}
+  document.getElementById("scorerName").addEventListener("change", function (e) {
+    try { localStorage.setItem("fitfunnel_scorer_name", e.target.value || ""); } catch (err) {}
+  });
+
+  // ---------- export / import / reset ----------
+  document.getElementById("exportBtn").addEventListener("click", function () {
+    var blob = new Blob([JSON.stringify(state.leads, null, 2)], { type: "application/json" });
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement("a");
+    var stamp = new Date().toISOString().slice(0, 10);
+    a.href = url;
+    a.download = "fit-funnel-export-" + stamp + ".json";
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    setTimeout(function () { URL.revokeObjectURL(url); }, 2000);
+  });
+
+  document.getElementById("importBtn").addEventListener("click", function () {
+    document.getElementById("importFile").click();
+  });
+  document.getElementById("importFile").addEventListener("change", function (e) {
+    var file = e.target.files && e.target.files[0];
+    if (!file) return;
+    var reader = new FileReader();
+    reader.onload = function () {
+      try {
+        var imported = JSON.parse(reader.result);
+        if (!Array.isArray(imported)) throw new Error("not an array");
+        mergeImport(imported);
+        renderStats(); renderTable();
+        if (!document.getElementById("tab-dashboard").hidden) renderDashboard();
+        window.alert("Imported " + imported.length + " leads. Newer scores won on conflicts.");
+      } catch (err) {
+        window.alert("Couldn't read that file — make sure it's a Fit Funnel export.");
+      }
+      e.target.value = "";
+    };
+    reader.readAsText(file);
+  });
+
+  document.getElementById("resetBtn").addEventListener("click", function () {
+    if (!window.confirm("Clear all scoring in this browser? Lead data itself is untouched (it keeps syncing from Pipedrive) — only scores, notes, and flags reset. This can't be undone here — export first if you want to keep it.")) return;
+    state.leads = state.leads.map(function (l) {
+      return Object.assign({}, l, {
+        scored: false, scores: {}, fitTier: null, notes: "", anomaly: false, anomalyNote: "", scoredBy: null, scoredAt: null
+      });
+    });
+    saveLeads();
+    renderStats(); renderTable();
+    if (!document.getElementById("tab-dashboard").hidden) renderDashboard();
+  });
+
+  // ---------- boot ----------
+  state.leads = loadLeads();
+  var syncNote = document.getElementById("syncNote");
+  syncNote.textContent = "Seeded from Pipedrive " + new Date(SEED_SYNCED_AT).toLocaleDateString() + " · " + SEED_LEADS.length + " leads · stored in this browser";
+  renderStats();
+  renderTable();
+
+  // Pull the live data/leads.json that the GitHub Action keeps refreshing.
+  // This runs after the page has already painted from local/seed data, so a
+  // slow or failed fetch (e.g. before the Action's first run) never blocks
+  // the page — it just quietly keeps whatever was already loaded.
+  fetch("data/leads.json", { cache: "no-store" })
+    .then(function (r) {
+      if (!r.ok) throw new Error("data/leads.json not available (status " + r.status + ")");
+      return r.json();
+    })
+    .then(function (payload) {
+      if (!payload || !Array.isArray(payload.leads)) throw new Error("Unexpected data/leads.json shape");
+      var freshBase = payload.leads.map(function (l) {
+        return Object.assign(
+          { scored: false, scores: {}, fitTier: null, notes: "", anomaly: false, anomalyNote: "", scoredBy: null, scoredAt: null },
+          l
+        );
+      });
+      mergeSyncedBase(freshBase);
+      renderStats();
+      renderTable();
+      if (!document.getElementById("tab-dashboard").hidden) renderDashboard();
+
+      var syncedDate = payload.syncedAt ? new Date(payload.syncedAt) : null;
+      syncNote.textContent =
+        (syncedDate ? "Synced from Pipedrive " + syncedDate.toLocaleString() : "Synced from Pipedrive") +
+        " · " + payload.leads.length + " leads" +
+        (payload.lookbackDays ? " (last " + payload.lookbackDays + " days)" : "") +
+        " · scoring stored in this browser";
+    })
+    .catch(function () {
+      // No data/leads.json yet (e.g. the sync workflow hasn't run for the
+      // first time), or the fetch failed — leave the seeded/local data as-is.
+    });
+})();
+</script>
+</body>
+</html>
