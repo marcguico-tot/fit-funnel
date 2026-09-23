@@ -1,5 +1,5 @@
 {
-  "syncedAt": "2026-09-23T18:10:00.000Z",
+  "syncedAt": "2026-09-23T22:55:23.301293+00:00",
   "dealCount": 36,
   "lookbackDays": 30,
   "leads": [
@@ -12,7 +12,7 @@
       "value": 0,
       "currency": "USD",
       "sourceChannel": "Web forms",
-      "sourceOrigin": "Web Forms",
+      "sourceOrigin": "WebForms",
       "pathway": null,
       "sourceEnv": null,
       "createdAt": "2026-09-23 17:58:57",
@@ -162,7 +162,7 @@
       "value": 0,
       "currency": "USD",
       "sourceChannel": "Web forms",
-      "sourceOrigin": "Web Forms",
+      "sourceOrigin": "WebForms",
       "pathway": "PACT + Excise for Tobacco / Vape / Nicotine",
       "sourceEnv": null,
       "createdAt": "2026-09-21 04:08:16",
@@ -180,7 +180,7 @@
       "sourceOrigin": "API",
       "pathway": null,
       "sourceEnv": "Production",
-      "createdAt": "2026-09-20",
+      "createdAt": "2026-09-20 13:35:23",
       "closedAt": null
     },
     {
@@ -222,7 +222,7 @@
       "value": 0,
       "currency": "USD",
       "sourceChannel": "Web forms",
-      "sourceOrigin": "Web Forms",
+      "sourceOrigin": "WebForms",
       "pathway": "PACT + Excise for Tobacco / Vape / Nicotine",
       "sourceEnv": null,
       "createdAt": "2026-09-18 16:02:16",
@@ -237,7 +237,7 @@
       "value": 0,
       "currency": "USD",
       "sourceChannel": "Web forms",
-      "sourceOrigin": "Web Forms",
+      "sourceOrigin": "WebForms",
       "pathway": "PACT + Excise for Tobacco / Vape / Nicotine",
       "sourceEnv": null,
       "createdAt": "2026-09-17 23:49:14",
@@ -357,10 +357,10 @@
       "value": 0,
       "currency": "USD",
       "sourceChannel": "Campaigns",
-      "sourceOrigin": "Manually created",
+      "sourceOrigin": "ManuallyCreated",
       "pathway": "Age Verification for Tobacco / Vape / Nicotine",
       "sourceEnv": null,
-      "createdAt": "2026-09-08",
+      "createdAt": "2026-09-08 22:31:40",
       "closedAt": null
     },
     {
@@ -432,7 +432,7 @@
       "value": 7500,
       "currency": "USD",
       "sourceChannel": null,
-      "sourceOrigin": "Manually created",
+      "sourceOrigin": "ManuallyCreated",
       "pathway": "Age Verification for Tobacco / Vape / Nicotine",
       "sourceEnv": null,
       "createdAt": "2026-09-04 19:50:39",
