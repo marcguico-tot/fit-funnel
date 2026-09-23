@@ -31,7 +31,7 @@ from datetime import datetime, timedelta, timezone
 
 import requests
 
-PIPEDRIVE_DOMAIN = os.environ.get("PIPEDRIVE_DOMAIN", "tokenoftrust")
+PIPEDRIVE_DOMAIN = os.environ.get("PIPEDRIVE_DOMAIN") or "tokenoftrust"
 API_TOKEN = os.environ.get("PIPEDRIVE_API_TOKEN")
 LOOKBACK_DAYS = int(os.environ.get("PIPEDRIVE_LOOKBACK_DAYS", "30"))
 OUTPUT_PATH = os.environ.get("OUTPUT_PATH", "data/leads.json")
