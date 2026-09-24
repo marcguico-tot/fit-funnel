@@ -1,6 +1,6 @@
 {
-  "syncedAt": "2026-09-23T22:55:23.301293+00:00",
-  "dealCount": 36,
+  "syncedAt": "2026-09-24T17:43:27.441669+00:00",
+  "dealCount": 35,
   "lookbackDays": 30,
   "leads": [
     {
@@ -527,21 +527,6 @@
       "sourceEnv": "Production",
       "createdAt": "2026-08-27 03:39:29",
       "closedAt": "2026-09-21 04:03:21"
-    },
-    {
-      "id": "1422",
-      "title": "test-dmm.it+KRf4N7B",
-      "org": "test-dmm.it",
-      "owner": "TOT Success",
-      "status": "lost",
-      "value": 0,
-      "currency": "USD",
-      "sourceChannel": null,
-      "sourceOrigin": "API",
-      "pathway": "Not enough info",
-      "sourceEnv": "Production",
-      "createdAt": "2026-08-25 16:22:35",
-      "closedAt": "2026-09-21 04:02:33"
     }
   ]
 }
