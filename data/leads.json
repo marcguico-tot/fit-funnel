@@ -1,8 +1,38 @@
 {
-  "syncedAt": "2026-09-24T17:43:27.441669+00:00",
-  "dealCount": 35,
+  "syncedAt": "2026-09-25T17:45:02.162136+00:00",
+  "dealCount": 37,
   "lookbackDays": 30,
   "leads": [
+    {
+      "id": "1465",
+      "title": "lavapefrancaise.com+HI02bGH",
+      "org": "lavapefrancaise.com",
+      "owner": "TOT Success",
+      "status": "open",
+      "value": 0,
+      "currency": "USD",
+      "sourceChannel": null,
+      "sourceOrigin": "API",
+      "pathway": null,
+      "sourceEnv": "Production",
+      "createdAt": "2026-09-25 07:38:40",
+      "closedAt": null
+    },
+    {
+      "id": "1464",
+      "title": "tfyg2t-51.myshopify.com+5CmQKjp",
+      "org": "tfyg2t-51.myshopify.com",
+      "owner": "TOT Success",
+      "status": "open",
+      "value": 0,
+      "currency": "USD",
+      "sourceChannel": null,
+      "sourceOrigin": "API",
+      "pathway": null,
+      "sourceEnv": "Production",
+      "createdAt": "2026-09-24 17:57:26",
+      "closedAt": null
+    },
     {
       "id": "1463",
       "title": "[webform] SFV",
@@ -13,7 +43,7 @@
       "currency": "USD",
       "sourceChannel": "Web forms",
       "sourceOrigin": "WebForms",
-      "pathway": null,
+      "pathway": "PACT + Excise for Tobacco / Vape / Nicotine",
       "sourceEnv": null,
       "createdAt": "2026-09-23 17:58:57",
       "closedAt": null
