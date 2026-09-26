@@ -1,8 +1,23 @@
 {
-  "syncedAt": "2026-09-25T17:45:02.162136+00:00",
+  "syncedAt": "2026-09-26T16:51:32.864800+00:00",
   "dealCount": 37,
   "lookbackDays": 30,
   "leads": [
+    {
+      "id": "1466",
+      "title": "debenterprisesolutions.com+NHxrrmr",
+      "org": "debenterprisesolutions.com",
+      "owner": "TOT Success",
+      "status": "open",
+      "value": 0,
+      "currency": "USD",
+      "sourceChannel": null,
+      "sourceOrigin": "API",
+      "pathway": null,
+      "sourceEnv": "Production",
+      "createdAt": "2026-09-26 12:59:40",
+      "closedAt": null
+    },
     {
       "id": "1465",
       "title": "lavapefrancaise.com+HI02bGH",
@@ -24,11 +39,11 @@
       "org": "tfyg2t-51.myshopify.com",
       "owner": "TOT Success",
       "status": "open",
-      "value": 0,
+      "value": 25,
       "currency": "USD",
       "sourceChannel": null,
       "sourceOrigin": "API",
-      "pathway": null,
+      "pathway": "Not enough info",
       "sourceEnv": "Production",
       "createdAt": "2026-09-24 17:57:26",
       "closedAt": null
@@ -39,7 +54,7 @@
       "org": "SFV",
       "owner": "Cherokee",
       "status": "open",
-      "value": 0,
+      "value": 1500,
       "currency": "USD",
       "sourceChannel": "Web forms",
       "sourceOrigin": "WebForms",
@@ -54,11 +69,11 @@
       "org": "straightfirevaporium.com",
       "owner": "TOT Success",
       "status": "open",
-      "value": 0,
+      "value": 25,
       "currency": "USD",
       "sourceChannel": null,
       "sourceOrigin": "API",
-      "pathway": null,
+      "pathway": "Age Verification for Tobacco / Vape / Nicotine",
       "sourceEnv": "Production",
       "createdAt": "2026-09-23 17:55:52",
       "closedAt": null
@@ -84,11 +99,11 @@
       "org": "www.club-auto.com",
       "owner": "TOT Success",
       "status": "open",
-      "value": 0,
+      "value": 50,
       "currency": "USD",
       "sourceChannel": null,
       "sourceOrigin": "API",
-      "pathway": null,
+      "pathway": "Other",
       "sourceEnv": "Production",
       "createdAt": "2026-09-22 14:14:22",
       "closedAt": null
@@ -542,21 +557,6 @@
       "sourceEnv": "Production",
       "createdAt": "2026-08-30 10:50:52",
       "closedAt": null
-    },
-    {
-      "id": "1423",
-      "title": "fasdevinho.com.br+K0vPfle",
-      "org": "fasdevinho.com.br",
-      "owner": "TOT Success",
-      "status": "lost",
-      "value": 0,
-      "currency": "USD",
-      "sourceChannel": null,
-      "sourceOrigin": "API",
-      "pathway": "Other",
-      "sourceEnv": "Production",
-      "createdAt": "2026-08-27 03:39:29",
-      "closedAt": "2026-09-21 04:03:21"
     }
   ]
 }
