@@ -1,8 +1,23 @@
 {
-  "syncedAt": "2026-10-06T18:45:21.673872+00:00",
-  "dealCount": 42,
+  "syncedAt": "2026-10-07T19:11:18.106111+00:00",
+  "dealCount": 43,
   "lookbackDays": 30,
   "leads": [
+    {
+      "id": "1484",
+      "title": "mylankapass.gt.tc+EdmWH9C",
+      "org": "mylankapass.gt.tc",
+      "owner": "TOT Success",
+      "status": "open",
+      "value": 0,
+      "currency": "USD",
+      "sourceChannel": null,
+      "sourceOrigin": "API",
+      "pathway": null,
+      "sourceEnv": "Production",
+      "createdAt": "2026-10-07 16:01:54",
+      "closedAt": null
+    },
     {
       "id": "1483",
       "title": "wordpress-1593587-6712647.cloudwaysapps.com+wJUsrVA",
@@ -43,7 +58,7 @@
       "currency": "USD",
       "sourceChannel": "Web forms",
       "sourceOrigin": "WebForms",
-      "pathway": null,
+      "pathway": "PACT + Excise for Tobacco / Vape / Nicotine",
       "sourceEnv": null,
       "createdAt": "2026-10-05 20:12:56",
       "closedAt": null
@@ -369,7 +384,7 @@
       "org": "Branding House LLC",
       "owner": "TOT Success",
       "status": "open",
-      "value": 3000,
+      "value": 8473,
       "currency": "USD",
       "sourceChannel": null,
       "sourceOrigin": "API",
