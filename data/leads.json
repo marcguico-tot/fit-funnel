@@ -1,8 +1,23 @@
 {
-  "syncedAt": "2026-10-07T19:11:18.106111+00:00",
-  "dealCount": 43,
+  "syncedAt": "2026-10-08T19:07:55.137006+00:00",
+  "dealCount": 42,
   "lookbackDays": 30,
   "leads": [
+    {
+      "id": "1485",
+      "title": "tot-test-verification-store.mybigcommerce.com+HE4r4nM",
+      "org": "tot-test-verification-store.mybigcommerce.com",
+      "owner": "TOT Success",
+      "status": "open",
+      "value": 0,
+      "currency": "USD",
+      "sourceChannel": null,
+      "sourceOrigin": "API",
+      "pathway": null,
+      "sourceEnv": "Production",
+      "createdAt": "2026-10-08 15:35:37",
+      "closedAt": null
+    },
     {
       "id": "1484",
       "title": "mylankapass.gt.tc+EdmWH9C",
@@ -211,21 +226,6 @@
       "pathway": null,
       "sourceEnv": null,
       "createdAt": "2026-09-28 17:42:50",
-      "closedAt": null
-    },
-    {
-      "id": "1469",
-      "title": "AlternativePods.com [Storefront]",
-      "org": "wholesale4vape.com",
-      "owner": "Anne",
-      "status": "open",
-      "value": 299,
-      "currency": "USD",
-      "sourceChannel": null,
-      "sourceOrigin": "ManuallyCreated",
-      "pathway": null,
-      "sourceEnv": null,
-      "createdAt": "2026-09-28 17:30:34",
       "closedAt": null
     },
     {
@@ -631,21 +631,6 @@
       "pathway": "Age Verification for Tobacco / Vape / Nicotine",
       "sourceEnv": null,
       "createdAt": "2026-09-08 22:31:40",
-      "closedAt": null
-    },
-    {
-      "id": "1435",
-      "title": "wyndhamreservecigars.com+FJodTO2",
-      "org": "wyndhamreservecigars.com",
-      "owner": "TOT Success",
-      "status": "open",
-      "value": 25,
-      "currency": "USD",
-      "sourceChannel": null,
-      "sourceOrigin": "API",
-      "pathway": "Age Verification for Tobacco / Vape / Nicotine",
-      "sourceEnv": "Production",
-      "createdAt": "2026-09-07 20:14:08",
       "closedAt": null
     }
   ]
