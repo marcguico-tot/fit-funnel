@@ -1,6 +1,6 @@
 {
-  "syncedAt": "2026-10-09T18:38:17.085500+00:00",
-  "dealCount": 40,
+  "syncedAt": "2026-10-10T17:37:32.264313+00:00",
+  "dealCount": 39,
   "lookbackDays": 30,
   "leads": [
     {
@@ -586,21 +586,6 @@
       "pathway": "Other",
       "sourceEnv": "Production",
       "createdAt": "2026-09-11 05:27:34",
-      "closedAt": null
-    },
-    {
-      "id": "1440",
-      "title": "michaelvanginkel.nl+NIpA1R6",
-      "org": "michaelvanginkel.nl",
-      "owner": "TOT Success",
-      "status": "open",
-      "value": 25,
-      "currency": "USD",
-      "sourceChannel": null,
-      "sourceOrigin": "API",
-      "pathway": "Other",
-      "sourceEnv": "Production",
-      "createdAt": "2026-09-10 15:54:57",
       "closedAt": null
     }
   ]
