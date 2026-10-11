@@ -1,6 +1,6 @@
 {
-  "syncedAt": "2026-10-10T17:37:32.264313+00:00",
-  "dealCount": 39,
+  "syncedAt": "2026-10-11T17:53:24.084161+00:00",
+  "dealCount": 37,
   "lookbackDays": 30,
   "leads": [
     {
@@ -556,36 +556,6 @@
       "pathway": "Age Verification for Tobacco / Vape / Nicotine",
       "sourceEnv": "Production",
       "createdAt": "2026-09-11 19:17:23",
-      "closedAt": null
-    },
-    {
-      "id": "1442",
-      "title": "silkcompanions.com+jbVQCDS",
-      "org": "silkcompanions.com",
-      "owner": "TOT Success",
-      "status": "open",
-      "value": 0,
-      "currency": "USD",
-      "sourceChannel": null,
-      "sourceOrigin": "API",
-      "pathway": "Other",
-      "sourceEnv": "Production",
-      "createdAt": "2026-09-11 06:00:44",
-      "closedAt": null
-    },
-    {
-      "id": "1441",
-      "title": "darkblue-aardvark-958106.hostingersite.com+YbqH9VG",
-      "org": "darkblue-aardvark-958106.hostingersite.com",
-      "owner": "TOT Success",
-      "status": "open",
-      "value": 25,
-      "currency": "USD",
-      "sourceChannel": null,
-      "sourceOrigin": "API",
-      "pathway": "Other",
-      "sourceEnv": "Production",
-      "createdAt": "2026-09-11 05:27:34",
       "closedAt": null
     }
   ]
