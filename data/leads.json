@@ -1,8 +1,38 @@
 {
-  "syncedAt": "2026-10-11T17:53:24.084161+00:00",
-  "dealCount": 37,
+  "syncedAt": "2026-10-12T21:31:58.517037+00:00",
+  "dealCount": 38,
   "lookbackDays": 30,
   "leads": [
+    {
+      "id": "1487",
+      "title": "ravenforge.com+ZRTGpEk",
+      "org": "ravenforge.com",
+      "owner": "TOT Success",
+      "status": "open",
+      "value": 0,
+      "currency": "USD",
+      "sourceChannel": null,
+      "sourceOrigin": "API",
+      "pathway": null,
+      "sourceEnv": "Production",
+      "createdAt": "2026-10-12 12:13:09",
+      "closedAt": null
+    },
+    {
+      "id": "1486",
+      "title": "westpeakvape.ca+HhBKZgY",
+      "org": "westpeakvape.ca",
+      "owner": "TOT Success",
+      "status": "open",
+      "value": 0,
+      "currency": "USD",
+      "sourceChannel": null,
+      "sourceOrigin": "API",
+      "pathway": null,
+      "sourceEnv": "Production",
+      "createdAt": "2026-10-12 02:59:05",
+      "closedAt": null
+    },
     {
       "id": "1485",
       "title": "tot-test-verification-store.mybigcommerce.com+HE4r4nM",
@@ -541,21 +571,6 @@
       "pathway": "Other",
       "sourceEnv": "Production",
       "createdAt": "2026-09-14 20:12:03",
-      "closedAt": null
-    },
-    {
-      "id": "1443",
-      "title": "getonnex.com+8fsQ7vN",
-      "org": "getonnex.com",
-      "owner": "TOT Success",
-      "status": "open",
-      "value": 25,
-      "currency": "USD",
-      "sourceChannel": null,
-      "sourceOrigin": "API",
-      "pathway": "Age Verification for Tobacco / Vape / Nicotine",
-      "sourceEnv": "Production",
-      "createdAt": "2026-09-11 19:17:23",
       "closedAt": null
     }
   ]
