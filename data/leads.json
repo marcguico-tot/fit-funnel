@@ -1,8 +1,38 @@
 {
-  "syncedAt": "2026-10-15T17:34:32.339208+00:00",
-  "dealCount": 44,
+  "syncedAt": "2026-10-16T17:09:27.134919+00:00",
+  "dealCount": 45,
   "lookbackDays": 30,
   "leads": [
+    {
+      "id": "1496",
+      "title": "mycigsaustralia.online+NYcO6uo",
+      "org": "mycigsaustralia.online",
+      "owner": "TOT Success",
+      "status": "open",
+      "value": 0,
+      "currency": "USD",
+      "sourceChannel": null,
+      "sourceOrigin": "API",
+      "pathway": null,
+      "sourceEnv": "Production",
+      "createdAt": "2026-10-16 05:15:59",
+      "closedAt": null
+    },
+    {
+      "id": "1495",
+      "title": "[webform] SYLVIA",
+      "org": null,
+      "owner": "Cherokee",
+      "status": "open",
+      "value": 0,
+      "currency": "USD",
+      "sourceChannel": "Web forms",
+      "sourceOrigin": "WebForms",
+      "pathway": null,
+      "sourceEnv": null,
+      "createdAt": "2026-10-15 18:35:39",
+      "closedAt": null
+    },
     {
       "id": "1494",
       "title": "woocommerce-1593587-6729304.cloudwaysapps.com+QlrVIn1",
@@ -646,21 +676,6 @@
       "pathway": "PACT + Excise for Tobacco / Vape / Nicotine",
       "sourceEnv": null,
       "createdAt": "2026-09-17 23:49:14",
-      "closedAt": null
-    },
-    {
-      "id": "1447",
-      "title": "driphacks.ch+NFSDJ4m",
-      "org": "driphacks.ch",
-      "owner": "TOT Success",
-      "status": "open",
-      "value": 0,
-      "currency": "USD",
-      "sourceChannel": null,
-      "sourceOrigin": "API",
-      "pathway": "Other",
-      "sourceEnv": "Production",
-      "createdAt": "2026-09-16 10:26:22",
       "closedAt": null
     }
   ]
