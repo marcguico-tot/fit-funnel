@@ -1,8 +1,38 @@
 {
-  "syncedAt": "2026-10-16T17:09:27.134919+00:00",
-  "dealCount": 45,
+  "syncedAt": "2026-10-17T16:07:22.488793+00:00",
+  "dealCount": 47,
   "lookbackDays": 30,
   "leads": [
+    {
+      "id": "1498",
+      "title": "[webform] TobacLink",
+      "org": "TobacLink",
+      "owner": "Cherokee",
+      "status": "open",
+      "value": 0,
+      "currency": "USD",
+      "sourceChannel": "Web forms",
+      "sourceOrigin": "WebForms",
+      "pathway": null,
+      "sourceEnv": null,
+      "createdAt": "2026-10-16 20:32:10",
+      "closedAt": null
+    },
+    {
+      "id": "1497",
+      "title": "Vaporadd",
+      "org": "Vaporadd",
+      "owner": "Anne",
+      "status": "open",
+      "value": 0,
+      "currency": "USD",
+      "sourceChannel": null,
+      "sourceOrigin": "API",
+      "pathway": null,
+      "sourceEnv": null,
+      "createdAt": "2026-10-16 18:18:39",
+      "closedAt": null
+    },
     {
       "id": "1496",
       "title": "mycigsaustralia.online+NYcO6uo",
