@@ -1,6 +1,6 @@
 {
-  "syncedAt": "2026-10-17T16:07:22.488793+00:00",
-  "dealCount": 47,
+  "syncedAt": "2026-10-18T16:20:22.267338+00:00",
+  "dealCount": 45,
   "lookbackDays": 30,
   "leads": [
     {
@@ -676,36 +676,6 @@
       "pathway": "Age Verification for Tobacco / Vape / Nicotine",
       "sourceEnv": "Production",
       "createdAt": "2026-09-19 18:22:10",
-      "closedAt": null
-    },
-    {
-      "id": "1449",
-      "title": "[webform] Hoot Pouches",
-      "org": "Hoot Pouches",
-      "owner": "Cherokee",
-      "status": "open",
-      "value": 1350,
-      "currency": "USD",
-      "sourceChannel": "Web forms",
-      "sourceOrigin": "WebForms",
-      "pathway": "PACT + Excise for Tobacco / Vape / Nicotine",
-      "sourceEnv": null,
-      "createdAt": "2026-09-18 16:02:16",
-      "closedAt": null
-    },
-    {
-      "id": "1448",
-      "title": "777highwayllc.com",
-      "org": null,
-      "owner": "Cherokee",
-      "status": "open",
-      "value": 3000,
-      "currency": "USD",
-      "sourceChannel": "Web forms",
-      "sourceOrigin": "WebForms",
-      "pathway": "PACT + Excise for Tobacco / Vape / Nicotine",
-      "sourceEnv": null,
-      "createdAt": "2026-09-17 23:49:14",
       "closedAt": null
     }
   ]
