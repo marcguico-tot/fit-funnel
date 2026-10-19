@@ -1,6 +1,6 @@
 {
-  "syncedAt": "2026-10-18T16:20:22.267338+00:00",
-  "dealCount": 45,
+  "syncedAt": "2026-10-19T18:58:11.090463+00:00",
+  "dealCount": 44,
   "lookbackDays": 30,
   "leads": [
     {
@@ -661,21 +661,6 @@
       "pathway": "Other",
       "sourceEnv": "Production",
       "createdAt": "2026-09-19 21:49:40",
-      "closedAt": null
-    },
-    {
-      "id": "1450",
-      "title": "ejuicedemand.com+Jz4eyKF",
-      "org": "ejuicedemand.com",
-      "owner": "TOT Success",
-      "status": "open",
-      "value": 25,
-      "currency": "USD",
-      "sourceChannel": null,
-      "sourceOrigin": "API",
-      "pathway": "Age Verification for Tobacco / Vape / Nicotine",
-      "sourceEnv": "Production",
-      "createdAt": "2026-09-19 18:22:10",
       "closedAt": null
     }
   ]
