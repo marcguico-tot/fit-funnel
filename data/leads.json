@@ -1,8 +1,23 @@
 {
-  "syncedAt": "2026-10-19T18:58:11.090463+00:00",
-  "dealCount": 44,
+  "syncedAt": "2026-10-20T17:45:06.223759+00:00",
+  "dealCount": 43,
   "lookbackDays": 30,
   "leads": [
+    {
+      "id": "1499",
+      "title": "hometownherovapor.com+cqb139B",
+      "org": "hometownherovapor.com",
+      "owner": "TOT Success",
+      "status": "open",
+      "value": 0,
+      "currency": "USD",
+      "sourceChannel": null,
+      "sourceOrigin": "API",
+      "pathway": null,
+      "sourceEnv": "Production",
+      "createdAt": "2026-10-19 21:42:48",
+      "closedAt": null
+    },
     {
       "id": "1498",
       "title": "[webform] TobacLink",
@@ -631,36 +646,6 @@
       "pathway": "Adult Content Privacy-First Age Verification",
       "sourceEnv": null,
       "createdAt": "2026-09-21 04:08:16",
-      "closedAt": null
-    },
-    {
-      "id": "1452",
-      "title": "thehouseofharriet.com+rl23b36",
-      "org": "thehouseofharriet.com",
-      "owner": "TOT Success",
-      "status": "open",
-      "value": 50,
-      "currency": "USD",
-      "sourceChannel": null,
-      "sourceOrigin": "API",
-      "pathway": "Other",
-      "sourceEnv": "Production",
-      "createdAt": "2026-09-20 13:35:23",
-      "closedAt": null
-    },
-    {
-      "id": "1451",
-      "title": "reservelp.com+uC1TIVH",
-      "org": "reservelp.com",
-      "owner": "TOT Success",
-      "status": "open",
-      "value": 25,
-      "currency": "USD",
-      "sourceChannel": null,
-      "sourceOrigin": "API",
-      "pathway": "Other",
-      "sourceEnv": "Production",
-      "createdAt": "2026-09-19 21:49:40",
       "closedAt": null
     }
   ]
