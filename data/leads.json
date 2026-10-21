@@ -1,8 +1,23 @@
 {
-  "syncedAt": "2026-10-20T17:45:06.223759+00:00",
-  "dealCount": 43,
+  "syncedAt": "2026-10-21T17:53:01.315257+00:00",
+  "dealCount": 42,
   "lookbackDays": 30,
   "leads": [
+    {
+      "id": "1500",
+      "title": "bonjour.uber.com+f1iia4Z",
+      "org": "bonjour.uber.com",
+      "owner": "TOT Success",
+      "status": "open",
+      "value": 0,
+      "currency": "USD",
+      "sourceChannel": null,
+      "sourceOrigin": "API",
+      "pathway": null,
+      "sourceEnv": "Production",
+      "createdAt": "2026-10-21 14:17:23",
+      "closedAt": null
+    },
     {
       "id": "1499",
       "title": "hometownherovapor.com+cqb139B",
@@ -65,15 +80,15 @@
     },
     {
       "id": "1495",
-      "title": "[webform] SYLVIA",
+      "title": "[webform] greensmartliving.com",
       "org": null,
       "owner": "Cherokee",
       "status": "open",
-      "value": 0,
+      "value": 1500,
       "currency": "USD",
       "sourceChannel": "Web forms",
       "sourceOrigin": "WebForms",
-      "pathway": null,
+      "pathway": "PACT + Excise for Tobacco / Vape / Nicotine",
       "sourceEnv": null,
       "createdAt": "2026-10-15 18:35:39",
       "closedAt": null
@@ -114,11 +129,11 @@
       "org": null,
       "owner": "Cherokee",
       "status": "open",
-      "value": 0,
+      "value": 25,
       "currency": "USD",
       "sourceChannel": "Web forms",
       "sourceOrigin": "WebForms",
-      "pathway": null,
+      "pathway": "Adult Content Privacy-First Age Verification",
       "sourceEnv": null,
       "createdAt": "2026-10-15 02:19:11",
       "closedAt": null
@@ -133,7 +148,7 @@
       "currency": "USD",
       "sourceChannel": "Web forms",
       "sourceOrigin": "WebForms",
-      "pathway": null,
+      "pathway": "PACT + Excise for Tobacco / Vape / Nicotine",
       "sourceEnv": null,
       "createdAt": "2026-10-14 22:09:50",
       "closedAt": null
@@ -278,15 +293,15 @@
       "title": "[webform] Hometown Hero",
       "org": "Hometown Hero",
       "owner": "Cherokee",
-      "status": "open",
-      "value": 1500,
+      "status": "won",
+      "value": 1750,
       "currency": "USD",
       "sourceChannel": "Web forms",
       "sourceOrigin": "WebForms",
       "pathway": "PACT + Excise for Tobacco / Vape / Nicotine",
       "sourceEnv": null,
       "createdAt": "2026-10-05 20:12:56",
-      "closedAt": null
+      "closedAt": "2026-10-21 12:49:14"
     },
     {
       "id": "1480",
@@ -338,7 +353,7 @@
       "title": "[iloveecigs.com] Oz International LLC",
       "org": "Oz International LLC",
       "owner": "Cherokee",
-      "status": "open",
+      "status": "lost",
       "value": 3000,
       "currency": "USD",
       "sourceChannel": "Web forms",
@@ -346,7 +361,7 @@
       "pathway": "PACT + Excise for Tobacco / Vape / Nicotine",
       "sourceEnv": null,
       "createdAt": "2026-09-30 08:22:41",
-      "closedAt": null
+      "closedAt": "2026-10-21 12:35:54"
     },
     {
       "id": "1475",
@@ -617,36 +632,6 @@
       "sourceEnv": "Production",
       "createdAt": "2026-09-21 18:02:34",
       "closedAt": "2026-09-21 18:05:10"
-    },
-    {
-      "id": "1455",
-      "title": "whitecloudelectroniccigarettes.com+nUYee3p",
-      "org": "whitecloudelectroniccigarettes.com",
-      "owner": "TOT Success",
-      "status": "open",
-      "value": 25,
-      "currency": "USD",
-      "sourceChannel": null,
-      "sourceOrigin": "API",
-      "pathway": "Age Verification for Tobacco / Vape / Nicotine",
-      "sourceEnv": "Production",
-      "createdAt": "2026-09-21 17:11:38",
-      "closedAt": null
-    },
-    {
-      "id": "1453",
-      "title": "[webform] Dream Castle Media Agency LLC",
-      "org": "Dream Castle Media Agency LLC",
-      "owner": "Cherokee",
-      "status": "open",
-      "value": 125,
-      "currency": "USD",
-      "sourceChannel": "Web forms",
-      "sourceOrigin": "WebForms",
-      "pathway": "Adult Content Privacy-First Age Verification",
-      "sourceEnv": null,
-      "createdAt": "2026-09-21 04:08:16",
-      "closedAt": null
     }
   ]
 }
