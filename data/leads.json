@@ -1,6 +1,6 @@
 {
-  "syncedAt": "2026-10-25T16:57:18.242470+00:00",
-  "dealCount": 38,
+  "syncedAt": "2026-10-26T19:00:26.577776+00:00",
+  "dealCount": 36,
   "lookbackDays": 30,
   "leads": [
     {
@@ -121,21 +121,6 @@
       "pathway": null,
       "sourceEnv": null,
       "createdAt": "2026-10-16 20:32:10",
-      "closedAt": null
-    },
-    {
-      "id": "1497",
-      "title": "Vaporadd",
-      "org": "Vaporadd",
-      "owner": "Anne",
-      "status": "open",
-      "value": 0,
-      "currency": "USD",
-      "sourceChannel": null,
-      "sourceOrigin": "API",
-      "pathway": null,
-      "sourceEnv": null,
-      "createdAt": "2026-10-16 18:18:39",
       "closedAt": null
     },
     {
@@ -556,21 +541,6 @@
       "pathway": "Age Verification for Tobacco / Vape / Nicotine",
       "sourceEnv": "Production",
       "createdAt": "2026-09-28 17:13:11",
-      "closedAt": null
-    },
-    {
-      "id": "1466",
-      "title": "debenterprisesolutions.com+NHxrrmr",
-      "org": "debenterprisesolutions.com",
-      "owner": "TOT Success",
-      "status": "open",
-      "value": 50,
-      "currency": "USD",
-      "sourceChannel": null,
-      "sourceOrigin": "API",
-      "pathway": "Other",
-      "sourceEnv": "Production",
-      "createdAt": "2026-09-26 12:59:40",
       "closedAt": null
     }
   ]
