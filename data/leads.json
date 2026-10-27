@@ -1,8 +1,53 @@
 {
-  "syncedAt": "2026-10-26T19:00:26.577776+00:00",
-  "dealCount": 36,
+  "syncedAt": "2026-10-27T18:31:59.447107+00:00",
+  "dealCount": 37,
   "lookbackDays": 30,
   "leads": [
+    {
+      "id": "1509",
+      "title": "vapagogo.fr+c7CKuKM",
+      "org": "vapagogo.fr",
+      "owner": "TOT Success",
+      "status": "open",
+      "value": 0,
+      "currency": "USD",
+      "sourceChannel": null,
+      "sourceOrigin": "API",
+      "pathway": null,
+      "sourceEnv": "Production",
+      "createdAt": "2026-10-27 17:24:05",
+      "closedAt": null
+    },
+    {
+      "id": "1508",
+      "title": "[webform] Lucy.co",
+      "org": "Sam McIntire organization",
+      "owner": "Cherokee",
+      "status": "open",
+      "value": 0,
+      "currency": "USD",
+      "sourceChannel": "Web forms",
+      "sourceOrigin": "WebForms",
+      "pathway": null,
+      "sourceEnv": null,
+      "createdAt": "2026-10-26 21:06:07",
+      "closedAt": null
+    },
+    {
+      "id": "1507",
+      "title": "legacyevening.com+JK8BaP4",
+      "org": "legacyevening.com",
+      "owner": "TOT Success",
+      "status": "open",
+      "value": 0,
+      "currency": "USD",
+      "sourceChannel": null,
+      "sourceOrigin": "API",
+      "pathway": null,
+      "sourceEnv": "Production",
+      "createdAt": "2026-10-26 20:09:51",
+      "closedAt": null
+    },
     {
       "id": "1506",
       "title": "www.wekad.me+S5gwDf0",
@@ -109,21 +154,6 @@
       "closedAt": null
     },
     {
-      "id": "1498",
-      "title": "[webform] TobacLink",
-      "org": "TobacLink",
-      "owner": "Cherokee",
-      "status": "open",
-      "value": 0,
-      "currency": "USD",
-      "sourceChannel": "Web forms",
-      "sourceOrigin": "WebForms",
-      "pathway": null,
-      "sourceEnv": null,
-      "createdAt": "2026-10-16 20:32:10",
-      "closedAt": null
-    },
-    {
       "id": "1496",
       "title": "mycigsaustralia.online+NYcO6uo",
       "org": "mycigsaustralia.online",
@@ -196,21 +226,6 @@
       "pathway": "Adult Content Privacy-First Age Verification",
       "sourceEnv": null,
       "createdAt": "2026-10-15 02:19:11",
-      "closedAt": null
-    },
-    {
-      "id": "1491",
-      "title": "[webform] GW DESIGN AND DISTRIBUTION INC",
-      "org": "GW DESIGN AND DISTRIBUTION INC",
-      "owner": "Cherokee",
-      "status": "open",
-      "value": 0,
-      "currency": "USD",
-      "sourceChannel": "Web forms",
-      "sourceOrigin": "WebForms",
-      "pathway": "PACT + Excise for Tobacco / Vape / Nicotine",
-      "sourceEnv": null,
-      "createdAt": "2026-10-14 22:09:50",
       "closedAt": null
     },
     {
