@@ -1,8 +1,23 @@
 {
-  "syncedAt": "2026-10-28T18:38:26.453751+00:00",
-  "dealCount": 31,
+  "syncedAt": "2026-10-29T18:46:14.245855+00:00",
+  "dealCount": 32,
   "lookbackDays": 30,
   "leads": [
+    {
+      "id": "1513",
+      "title": "testmilner.com+mTzBCzR",
+      "org": "testmilner.com",
+      "owner": "TOT Success",
+      "status": "open",
+      "value": 0,
+      "currency": "USD",
+      "sourceChannel": null,
+      "sourceOrigin": "API",
+      "pathway": null,
+      "sourceEnv": "Production",
+      "createdAt": "2026-10-29 13:21:53",
+      "closedAt": null
+    },
     {
       "id": "1512",
       "title": "Vape On Wholesale: Nicotine",
