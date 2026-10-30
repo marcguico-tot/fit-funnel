@@ -1,6 +1,6 @@
 {
-  "syncedAt": "2026-10-29T18:46:14.245855+00:00",
-  "dealCount": 32,
+  "syncedAt": "2026-10-30T18:24:25.277679+00:00",
+  "dealCount": 29,
   "lookbackDays": 30,
   "leads": [
     {
@@ -436,51 +436,6 @@
       "pathway": "Other",
       "sourceEnv": null,
       "createdAt": "2026-10-01 19:53:25",
-      "closedAt": null
-    },
-    {
-      "id": "1476",
-      "title": "[iloveecigs.com] Oz International LLC",
-      "org": "Oz International LLC",
-      "owner": "Cherokee",
-      "status": "lost",
-      "value": 3000,
-      "currency": "USD",
-      "sourceChannel": "Web forms",
-      "sourceOrigin": "WebForms",
-      "pathway": "PACT + Excise for Tobacco / Vape / Nicotine",
-      "sourceEnv": null,
-      "createdAt": "2026-09-30 08:22:41",
-      "closedAt": "2026-10-21 12:35:54"
-    },
-    {
-      "id": "1475",
-      "title": "txspacecadet.com+C8knXxe",
-      "org": "txspacecadet.com",
-      "owner": "TOT Success",
-      "status": "open",
-      "value": 25,
-      "currency": "USD",
-      "sourceChannel": null,
-      "sourceOrigin": "API",
-      "pathway": "Age Verification for Tobacco / Vape / Nicotine",
-      "sourceEnv": "Production",
-      "createdAt": "2026-09-30 07:38:03",
-      "closedAt": null
-    },
-    {
-      "id": "1474",
-      "title": "www.incluxivstudios.com+KfstlSX",
-      "org": "www.incluxivstudios.com",
-      "owner": "TOT Success",
-      "status": "open",
-      "value": 25,
-      "currency": "USD",
-      "sourceChannel": null,
-      "sourceOrigin": "API",
-      "pathway": "Not enough info",
-      "sourceEnv": "Production",
-      "createdAt": "2026-09-30 07:33:58",
       "closedAt": null
     }
   ]
