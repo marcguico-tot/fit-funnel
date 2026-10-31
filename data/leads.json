@@ -1,8 +1,38 @@
 {
-  "syncedAt": "2026-10-30T18:24:25.277679+00:00",
-  "dealCount": 29,
+  "syncedAt": "2026-10-31T17:29:39.017579+00:00",
+  "dealCount": 31,
   "lookbackDays": 30,
   "leads": [
+    {
+      "id": "1516",
+      "title": "as8.bcmarket.org+48Clzh6",
+      "org": "as8.bcmarket.org",
+      "owner": "TOT Success",
+      "status": "open",
+      "value": 0,
+      "currency": "USD",
+      "sourceChannel": null,
+      "sourceOrigin": "API",
+      "pathway": null,
+      "sourceEnv": "Production",
+      "createdAt": "2026-10-31 04:05:00",
+      "closedAt": null
+    },
+    {
+      "id": "1515",
+      "title": "as5.bcmarket.org+jntdZ6v",
+      "org": "as5.bcmarket.org",
+      "owner": "TOT Success",
+      "status": "open",
+      "value": 0,
+      "currency": "USD",
+      "sourceChannel": null,
+      "sourceOrigin": "API",
+      "pathway": null,
+      "sourceEnv": "Production",
+      "createdAt": "2026-10-31 03:55:08",
+      "closedAt": null
+    },
     {
       "id": "1513",
       "title": "testmilner.com+mTzBCzR",
