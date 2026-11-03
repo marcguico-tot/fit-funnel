@@ -1,6 +1,6 @@
 {
-  "syncedAt": "2026-11-02T22:06:22.578963+00:00",
-  "dealCount": 29,
+  "syncedAt": "2026-11-03T19:56:45.304004+00:00",
+  "dealCount": 28,
   "lookbackDays": 30,
   "leads": [
     {
@@ -422,21 +422,6 @@
       "sourceEnv": null,
       "createdAt": "2026-10-05 20:12:56",
       "closedAt": "2026-10-21 12:49:14"
-    },
-    {
-      "id": "1480",
-      "title": "lotfy.com+a8BGU6c",
-      "org": "lotfy.com",
-      "owner": "TOT Success",
-      "status": "open",
-      "value": 0,
-      "currency": "USD",
-      "sourceChannel": null,
-      "sourceOrigin": "API",
-      "pathway": null,
-      "sourceEnv": "Production",
-      "createdAt": "2026-10-04 19:44:32",
-      "closedAt": null
     }
   ]
 }
