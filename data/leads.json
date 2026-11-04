@@ -1,8 +1,53 @@
 {
-  "syncedAt": "2026-11-03T19:56:45.304004+00:00",
-  "dealCount": 28,
+  "syncedAt": "2026-11-04T20:14:55.138015+00:00",
+  "dealCount": 30,
   "lookbackDays": 30,
   "leads": [
+    {
+      "id": "1519",
+      "title": "Vaporadd",
+      "org": "Vaporadd",
+      "owner": "Anne",
+      "status": "open",
+      "value": 0,
+      "currency": "USD",
+      "sourceChannel": null,
+      "sourceOrigin": "API",
+      "pathway": null,
+      "sourceEnv": null,
+      "createdAt": "2026-11-04 16:51:58",
+      "closedAt": null
+    },
+    {
+      "id": "1518",
+      "title": "leafbuyer.com",
+      "org": "leafbuyer.com",
+      "owner": "Anne",
+      "status": "open",
+      "value": 0,
+      "currency": "USD",
+      "sourceChannel": null,
+      "sourceOrigin": "ManuallyCreated",
+      "pathway": null,
+      "sourceEnv": null,
+      "createdAt": "2026-11-04 16:51:38",
+      "closedAt": null
+    },
+    {
+      "id": "1517",
+      "title": "mcp.tokenoftrust.com+DZlukcN",
+      "org": "mcp.tokenoftrust.com",
+      "owner": "TOT Success",
+      "status": "open",
+      "value": 0,
+      "currency": "USD",
+      "sourceChannel": null,
+      "sourceOrigin": "API",
+      "pathway": null,
+      "sourceEnv": "Production",
+      "createdAt": "2026-11-04 03:13:27",
+      "closedAt": null
+    },
     {
       "id": "1516",
       "title": "as8.bcmarket.org+48Clzh6",
@@ -407,21 +452,6 @@
       "sourceEnv": "Production",
       "createdAt": "2026-10-06 11:46:08",
       "closedAt": null
-    },
-    {
-      "id": "1481",
-      "title": "[webform] Hometown Hero",
-      "org": "Hometown Hero",
-      "owner": "Cherokee",
-      "status": "won",
-      "value": 1750,
-      "currency": "USD",
-      "sourceChannel": "Web forms",
-      "sourceOrigin": "WebForms",
-      "pathway": "PACT + Excise for Tobacco / Vape / Nicotine",
-      "sourceEnv": null,
-      "createdAt": "2026-10-05 20:12:56",
-      "closedAt": "2026-10-21 12:49:14"
     }
   ]
 }
