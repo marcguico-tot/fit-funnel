@@ -1,8 +1,23 @@
 {
-  "syncedAt": "2026-11-04T20:14:55.138015+00:00",
-  "dealCount": 30,
+  "syncedAt": "2026-11-05T20:27:36.446939+00:00",
+  "dealCount": 29,
   "lookbackDays": 30,
   "leads": [
+    {
+      "id": "1520",
+      "title": "letmeseeyou.fans+DfMm3O2",
+      "org": "letmeseeyou.fans",
+      "owner": "TOT Success",
+      "status": "open",
+      "value": 0,
+      "currency": "USD",
+      "sourceChannel": null,
+      "sourceOrigin": "API",
+      "pathway": null,
+      "sourceEnv": "Production",
+      "createdAt": "2026-11-04 21:16:15",
+      "closedAt": null
+    },
     {
       "id": "1519",
       "title": "Vaporadd",
@@ -421,36 +436,6 @@
       "pathway": null,
       "sourceEnv": "Production",
       "createdAt": "2026-10-07 16:01:54",
-      "closedAt": null
-    },
-    {
-      "id": "1483",
-      "title": "wordpress-1593587-6712647.cloudwaysapps.com+wJUsrVA",
-      "org": "wordpress-1593587-6712647.cloudwaysapps.com",
-      "owner": "TOT Success",
-      "status": "open",
-      "value": 0,
-      "currency": "USD",
-      "sourceChannel": null,
-      "sourceOrigin": "API",
-      "pathway": null,
-      "sourceEnv": "Production",
-      "createdAt": "2026-10-06 12:26:00",
-      "closedAt": null
-    },
-    {
-      "id": "1482",
-      "title": "tradespace.liveblog365.com+CCrvivm",
-      "org": "tradespace.liveblog365.com",
-      "owner": "TOT Success",
-      "status": "open",
-      "value": 0,
-      "currency": "USD",
-      "sourceChannel": null,
-      "sourceOrigin": "API",
-      "pathway": null,
-      "sourceEnv": "Production",
-      "createdAt": "2026-10-06 11:46:08",
       "closedAt": null
     }
   ]
