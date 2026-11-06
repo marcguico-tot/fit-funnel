@@ -1,6 +1,6 @@
 {
-  "syncedAt": "2026-11-05T20:27:36.446939+00:00",
-  "dealCount": 29,
+  "syncedAt": "2026-11-06T19:49:34.836317+00:00",
+  "dealCount": 28,
   "lookbackDays": 30,
   "leads": [
     {
@@ -421,21 +421,6 @@
       "pathway": null,
       "sourceEnv": "Production",
       "createdAt": "2026-10-08 15:35:37",
-      "closedAt": null
-    },
-    {
-      "id": "1484",
-      "title": "mylankapass.gt.tc+EdmWH9C",
-      "org": "mylankapass.gt.tc",
-      "owner": "TOT Success",
-      "status": "open",
-      "value": 0,
-      "currency": "USD",
-      "sourceChannel": null,
-      "sourceOrigin": "API",
-      "pathway": null,
-      "sourceEnv": "Production",
-      "createdAt": "2026-10-07 16:01:54",
       "closedAt": null
     }
   ]
