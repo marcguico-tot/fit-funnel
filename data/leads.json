@@ -1,8 +1,38 @@
 {
-  "syncedAt": "2026-11-06T19:49:34.836317+00:00",
-  "dealCount": 28,
+  "syncedAt": "2026-11-07T17:55:45.962022+00:00",
+  "dealCount": 29,
   "lookbackDays": 30,
   "leads": [
+    {
+      "id": "1522",
+      "title": "packproworldwides.com+K5Av41N",
+      "org": "packproworldwides.com",
+      "owner": "TOT Success",
+      "status": "open",
+      "value": 0,
+      "currency": "USD",
+      "sourceChannel": null,
+      "sourceOrigin": "API",
+      "pathway": null,
+      "sourceEnv": "Production",
+      "createdAt": "2026-11-07 00:21:19",
+      "closedAt": null
+    },
+    {
+      "id": "1521",
+      "title": "Primal Glass",
+      "org": "Primal Glass",
+      "owner": "Anne",
+      "status": "open",
+      "value": 0,
+      "currency": "USD",
+      "sourceChannel": null,
+      "sourceOrigin": "API",
+      "pathway": null,
+      "sourceEnv": null,
+      "createdAt": "2026-11-06 21:46:40",
+      "closedAt": null
+    },
     {
       "id": "1520",
       "title": "letmeseeyou.fans+DfMm3O2",
@@ -406,21 +436,6 @@
       "pathway": null,
       "sourceEnv": "Production",
       "createdAt": "2026-10-12 02:59:05",
-      "closedAt": null
-    },
-    {
-      "id": "1485",
-      "title": "tot-test-verification-store.mybigcommerce.com+HE4r4nM",
-      "org": "tot-test-verification-store.mybigcommerce.com",
-      "owner": "TOT Success",
-      "status": "open",
-      "value": 0,
-      "currency": "USD",
-      "sourceChannel": null,
-      "sourceOrigin": "API",
-      "pathway": null,
-      "sourceEnv": "Production",
-      "createdAt": "2026-10-08 15:35:37",
       "closedAt": null
     }
   ]
