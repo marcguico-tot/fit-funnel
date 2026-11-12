@@ -1,8 +1,23 @@
 {
-  "syncedAt": "2026-11-11T19:59:10.449577+00:00",
-  "dealCount": 34,
+  "syncedAt": "2026-11-12T20:37:39.321779+00:00",
+  "dealCount": 35,
   "lookbackDays": 30,
   "leads": [
+    {
+      "id": "1530",
+      "title": "maxdelivers.com+qxCNHxZ",
+      "org": "maxdelivers.com",
+      "owner": "TOT Success",
+      "status": "open",
+      "value": 0,
+      "currency": "USD",
+      "sourceChannel": null,
+      "sourceOrigin": "API",
+      "pathway": null,
+      "sourceEnv": "Production",
+      "createdAt": "2026-11-12 15:56:16",
+      "closedAt": null
+    },
     {
       "id": "1529",
       "title": "Vape On Wholesale: Nicotine",
