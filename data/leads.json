@@ -1,6 +1,6 @@
 {
-  "syncedAt": "2026-11-13T20:17:28.912093+00:00",
-  "dealCount": 35,
+  "syncedAt": "2026-11-14T18:38:02.617389+00:00",
+  "dealCount": 32,
   "lookbackDays": 30,
   "leads": [
     {
@@ -481,51 +481,6 @@
       "pathway": null,
       "sourceEnv": "Production",
       "createdAt": "2026-10-16 05:15:59",
-      "closedAt": null
-    },
-    {
-      "id": "1495",
-      "title": "[webform] greensmartliving.com",
-      "org": null,
-      "owner": "Cherokee",
-      "status": "open",
-      "value": 4250,
-      "currency": "USD",
-      "sourceChannel": "Web forms",
-      "sourceOrigin": "WebForms",
-      "pathway": "PACT + Excise for Tobacco / Vape / Nicotine",
-      "sourceEnv": null,
-      "createdAt": "2026-10-15 18:35:39",
-      "closedAt": null
-    },
-    {
-      "id": "1494",
-      "title": "woocommerce-1593587-6729304.cloudwaysapps.com+QlrVIn1",
-      "org": "woocommerce-1593587-6729304.cloudwaysapps.com",
-      "owner": "TOT Success",
-      "status": "open",
-      "value": 0,
-      "currency": "USD",
-      "sourceChannel": null,
-      "sourceOrigin": "API",
-      "pathway": null,
-      "sourceEnv": "Production",
-      "createdAt": "2026-10-15 13:05:48",
-      "closedAt": null
-    },
-    {
-      "id": "1493",
-      "title": "vapepandausa.com+ky0GVW2",
-      "org": "vapepandausa.com",
-      "owner": "TOT Success",
-      "status": "open",
-      "value": 0,
-      "currency": "USD",
-      "sourceChannel": null,
-      "sourceOrigin": "API",
-      "pathway": null,
-      "sourceEnv": "Production",
-      "createdAt": "2026-10-15 09:20:00",
       "closedAt": null
     }
   ]
