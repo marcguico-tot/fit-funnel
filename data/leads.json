@@ -1,6 +1,6 @@
 {
-  "syncedAt": "2026-11-14T18:38:02.617389+00:00",
-  "dealCount": 32,
+  "syncedAt": "2026-11-15T19:13:44.690452+00:00",
+  "dealCount": 31,
   "lookbackDays": 30,
   "leads": [
     {
@@ -466,21 +466,6 @@
       "pathway": null,
       "sourceEnv": "Production",
       "createdAt": "2026-10-19 21:42:48",
-      "closedAt": null
-    },
-    {
-      "id": "1496",
-      "title": "mycigsaustralia.online+NYcO6uo",
-      "org": "mycigsaustralia.online",
-      "owner": "TOT Success",
-      "status": "open",
-      "value": 0,
-      "currency": "USD",
-      "sourceChannel": null,
-      "sourceOrigin": "API",
-      "pathway": null,
-      "sourceEnv": "Production",
-      "createdAt": "2026-10-16 05:15:59",
       "closedAt": null
     }
   ]
