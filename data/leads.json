@@ -1,8 +1,38 @@
 {
-  "syncedAt": "2026-11-16T22:43:10.981910+00:00",
-  "dealCount": 31,
+  "syncedAt": "2026-11-17T21:29:47.791413+00:00",
+  "dealCount": 33,
   "lookbackDays": 30,
   "leads": [
+    {
+      "id": "1538",
+      "title": "rebud.com+5qtf2oL",
+      "org": "rebud.com",
+      "owner": "TOT Success",
+      "status": "open",
+      "value": 0,
+      "currency": "USD",
+      "sourceChannel": null,
+      "sourceOrigin": "API",
+      "pathway": null,
+      "sourceEnv": "Production",
+      "createdAt": "2026-11-17 20:47:12",
+      "closedAt": null
+    },
+    {
+      "id": "1537",
+      "title": "smooth-circle-company.ch+PAf1ZB2",
+      "org": "smooth-circle-company.ch",
+      "owner": "TOT Success",
+      "status": "open",
+      "value": 0,
+      "currency": "USD",
+      "sourceChannel": null,
+      "sourceOrigin": "API",
+      "pathway": null,
+      "sourceEnv": "Production",
+      "createdAt": "2026-11-17 11:53:37",
+      "closedAt": null
+    },
     {
       "id": "1536",
       "title": "[webform] Carlo organization",
