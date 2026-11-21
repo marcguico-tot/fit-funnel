@@ -1,8 +1,23 @@
 {
-  "syncedAt": "2026-11-20T20:54:07.262050+00:00",
+  "syncedAt": "2026-11-21T19:54:48.099549+00:00",
   "dealCount": 29,
   "lookbackDays": 30,
   "leads": [
+    {
+      "id": "1539",
+      "title": "negewa.de+50p7j9R",
+      "org": "negewa.de",
+      "owner": "TOT Success",
+      "status": "open",
+      "value": 0,
+      "currency": "USD",
+      "sourceChannel": null,
+      "sourceOrigin": "API",
+      "pathway": null,
+      "sourceEnv": "Production",
+      "createdAt": "2026-11-21 11:46:25",
+      "closedAt": null
+    },
     {
       "id": "1538",
       "title": "rebud.com+5qtf2oL",
@@ -421,21 +436,6 @@
       "pathway": null,
       "sourceEnv": "Production",
       "createdAt": "2026-10-24 02:03:12",
-      "closedAt": null
-    },
-    {
-      "id": "1501",
-      "title": "moyfieldbargainbuys.com+JaWaxcf",
-      "org": "moyfieldbargainbuys.com",
-      "owner": "TOT Success",
-      "status": "open",
-      "value": 0,
-      "currency": "USD",
-      "sourceChannel": null,
-      "sourceOrigin": "API",
-      "pathway": null,
-      "sourceEnv": "Production",
-      "createdAt": "2026-10-22 18:44:40",
       "closedAt": null
     }
   ]
