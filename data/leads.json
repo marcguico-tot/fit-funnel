@@ -1,8 +1,23 @@
 {
-  "syncedAt": "2026-11-22T20:07:17.720039+00:00",
+  "syncedAt": "2026-11-24T00:33:56.027638+00:00",
   "dealCount": 29,
   "lookbackDays": 30,
   "leads": [
+    {
+      "id": "1540",
+      "title": "[webform] Vitauthority",
+      "org": "Vitauthority",
+      "owner": "Cherokee",
+      "status": "open",
+      "value": 0,
+      "currency": "USD",
+      "sourceChannel": "Web forms",
+      "sourceOrigin": "WebForms",
+      "pathway": null,
+      "sourceEnv": null,
+      "createdAt": "2026-11-23 21:55:24",
+      "closedAt": null
+    },
     {
       "id": "1539",
       "title": "negewa.de+50p7j9R",
@@ -58,7 +73,7 @@
       "currency": "USD",
       "sourceChannel": "Web forms",
       "sourceOrigin": "WebForms",
-      "pathway": null,
+      "pathway": "Adult Content Privacy-First Age Verification",
       "sourceEnv": null,
       "createdAt": "2026-11-16 19:30:32",
       "closedAt": null
@@ -421,21 +436,6 @@
       "pathway": null,
       "sourceEnv": "Production",
       "createdAt": "2026-10-25 05:06:46",
-      "closedAt": null
-    },
-    {
-      "id": "1504",
-      "title": "velvet-noir.polsia.io+Dm8mHJr",
-      "org": "velvet-noir.polsia.io",
-      "owner": "TOT Success",
-      "status": "open",
-      "value": 0,
-      "currency": "USD",
-      "sourceChannel": null,
-      "sourceOrigin": "API",
-      "pathway": null,
-      "sourceEnv": "Production",
-      "createdAt": "2026-10-24 02:03:12",
       "closedAt": null
     }
   ]
