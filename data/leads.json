@@ -1,8 +1,23 @@
 {
-  "syncedAt": "2026-11-24T22:53:25.786489+00:00",
-  "dealCount": 31,
+  "syncedAt": "2026-11-25T22:07:23.018589+00:00",
+  "dealCount": 30,
   "lookbackDays": 30,
   "leads": [
+    {
+      "id": "1545",
+      "title": "Millenium Smoke Shop",
+      "org": "Millenium Smoke Shop",
+      "owner": "Anne",
+      "status": "open",
+      "value": 299,
+      "currency": "USD",
+      "sourceChannel": null,
+      "sourceOrigin": "API",
+      "pathway": null,
+      "sourceEnv": null,
+      "createdAt": "2026-11-25 19:22:19",
+      "closedAt": null
+    },
     {
       "id": "1544",
       "title": "zigzag.com",
@@ -437,36 +452,6 @@
       "sourceEnv": "Production",
       "createdAt": "2026-10-27 17:24:05",
       "closedAt": "2026-11-19 19:24:35"
-    },
-    {
-      "id": "1508",
-      "title": "[webform] Lucy.co",
-      "org": "Sam McIntire organization",
-      "owner": "Cherokee",
-      "status": "open",
-      "value": 3000,
-      "currency": "USD",
-      "sourceChannel": "Web forms",
-      "sourceOrigin": "WebForms",
-      "pathway": "PACT + Excise for Tobacco / Vape / Nicotine",
-      "sourceEnv": null,
-      "createdAt": "2026-10-26 21:06:07",
-      "closedAt": null
-    },
-    {
-      "id": "1507",
-      "title": "legacyevening.com+JK8BaP4",
-      "org": "legacyevening.com",
-      "owner": "TOT Success",
-      "status": "open",
-      "value": 0,
-      "currency": "USD",
-      "sourceChannel": null,
-      "sourceOrigin": "API",
-      "pathway": null,
-      "sourceEnv": "Production",
-      "createdAt": "2026-10-26 20:09:51",
-      "closedAt": null
     }
   ]
 }
