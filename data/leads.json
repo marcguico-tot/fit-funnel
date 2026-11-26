@@ -1,6 +1,6 @@
 {
-  "syncedAt": "2026-11-25T22:07:23.018589+00:00",
-  "dealCount": 30,
+  "syncedAt": "2026-11-26T22:05:40.595795+00:00",
+  "dealCount": 29,
   "lookbackDays": 30,
   "leads": [
     {
@@ -437,21 +437,6 @@
       "sourceEnv": "Production",
       "createdAt": "2026-10-28 11:57:44",
       "closedAt": null
-    },
-    {
-      "id": "1509",
-      "title": "vapagogo.fr+c7CKuKM",
-      "org": "vapagogo.fr",
-      "owner": "TOT Success",
-      "status": "lost",
-      "value": 0,
-      "currency": "USD",
-      "sourceChannel": null,
-      "sourceOrigin": "API",
-      "pathway": null,
-      "sourceEnv": "Production",
-      "createdAt": "2026-10-27 17:24:05",
-      "closedAt": "2026-11-19 19:24:35"
     }
   ]
 }
