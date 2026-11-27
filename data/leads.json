@@ -1,6 +1,6 @@
 {
-  "syncedAt": "2026-11-26T22:05:40.595795+00:00",
-  "dealCount": 29,
+  "syncedAt": "2026-11-27T21:47:21.287632+00:00",
+  "dealCount": 27,
   "lookbackDays": 30,
   "leads": [
     {
@@ -406,36 +406,6 @@
       "pathway": null,
       "sourceEnv": "Production",
       "createdAt": "2026-10-29 13:21:53",
-      "closedAt": null
-    },
-    {
-      "id": "1512",
-      "title": "Vape On Wholesale: Nicotine",
-      "org": "Vape On Wholesale: Nicotine",
-      "owner": "Cherokee",
-      "status": "open",
-      "value": 1500,
-      "currency": "USD",
-      "sourceChannel": null,
-      "sourceOrigin": "API",
-      "pathway": "PACT + Excise for Tobacco / Vape / Nicotine",
-      "sourceEnv": null,
-      "createdAt": "2026-10-28 14:33:30",
-      "closedAt": null
-    },
-    {
-      "id": "1511",
-      "title": "www.canna-power.co.uk.+Qfp9OkX",
-      "org": "www.canna-power.co.uk.",
-      "owner": "TOT Success",
-      "status": "open",
-      "value": 0,
-      "currency": "USD",
-      "sourceChannel": null,
-      "sourceOrigin": "API",
-      "pathway": null,
-      "sourceEnv": "Production",
-      "createdAt": "2026-10-28 11:57:44",
       "closedAt": null
     }
   ]
